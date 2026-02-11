@@ -2589,36 +2589,6 @@ Let's follow Nadia from the beginning to where she is today:
 
 ---
 
-# INTERACTIVE TOOLS
-
-Practice the concepts from this guide with these free, browser-based calculators. No installation needed — click the link and start calculating.
-
-### EOQ Calculator
-**[Open EOQ Calculator](https://rahees-16.github.io/inventory-management-and-asset-tracking/tools/eoq-calculator.html)**
-
-Enter your annual demand, ordering cost, and holding cost per unit — get the optimal order quantity that minimises total inventory cost. Includes a comparison table showing why EOQ is the sweet spot.
-- **Use after:** Chapter 6.3 (Economic Order Quantity)
-
-### Safety Stock Calculator
-**[Open Safety Stock Calculator](https://rahees-16.github.io/inventory-management-and-asset-tracking/tools/safety-stock-calculator.html)**
-
-Enter your average daily demand, demand variability, lead time, and desired service level — get the safety stock quantity and reorder point. Includes a plain-English explanation of what the numbers mean.
-- **Use after:** Chapter 6.2 (Safety Stock)
-
-### Reorder Point Calculator
-**[Open Reorder Point Calculator](https://rahees-16.github.io/inventory-management-and-asset-tracking/tools/reorder-point-calculator.html)**
-
-Enter your daily usage rate, lead time, and safety stock — get the exact stock level at which you should place your next order. Includes a visual stock-over-time chart.
-- **Use after:** Chapter 6.1 (Reorder Point)
-
-### ABC Analysis Tool
-**[Open ABC Analysis Tool](https://rahees-16.github.io/inventory-management-and-asset-tracking/tools/abc-analysis.html)**
-
-Paste your product names and annual revenue — get an instant ABC classification with colour-coded charts. Shows which products are your A-class stars, B-class middle, and C-class long tail.
-- **Use after:** Chapter 4 (ABC Classification)
-
----
-
 # APPENDIX: HANDS-ON SOFTWARE WALKTHROUGH
 
 > This section walks you through real software that inventory and asset managers use every day. All tools mentioned are free or have free tiers.
