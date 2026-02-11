@@ -305,8 +305,8 @@ FURN-CHR-BLK-003      Furniture > Chair > Black > Item 3
 
 ### 2.3 Barcodes: How Machines Read SKUs
 
-![Different types of barcodes — UPC linear barcode, QR code, and Data Matrix](https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/EAN13.svg/440px-EAN13.svg.png)
-*An EAN-13 barcode — the type you see on every product in a store. The lines encode a 13-digit number. (Image: Wikimedia Commons, Public Domain)*
+![EAN-13 barcode — the type you see on every product in a store](https://upload.wikimedia.org/wikipedia/commons/8/84/EAN13.svg)
+*An EAN-13 barcode — the lines encode a 13-digit number that identifies the product. (Image: Wikimedia Commons, Public Domain)*
 
 A barcode is just a visual way to encode a number so that machines can read it instantly. Instead of a human typing "074182765108" into a computer, a scanner reads the barcode in milliseconds.
 
@@ -345,8 +345,8 @@ All of that happens in a fraction of a second.
 
 ### 2.4 RFID: Tracking Without Scanning Line-of-Sight
 
-![RFID tags of various types — passive sticker tags and active tags with batteries](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/RFID_Chip_008.jpg/1280px-RFID_Chip_008.jpg)
-*RFID tags come in many forms — from paper-thin stickers (passive) to battery-powered devices (active). (Image: Wikimedia Commons, CC BY-SA 3.0)*
+![RFID chip on a circuit board — the tiny chip and antenna that make radio-frequency identification work](https://upload.wikimedia.org/wikipedia/commons/a/a4/RFID_Chip_006.JPG)
+*An RFID chip up close — the tiny chip and antenna are what allow radio-frequency identification without line-of-sight scanning. (Image: Wikimedia Commons, CC BY-SA 3.0)*
 
 Barcodes have a limitation — you need to point a scanner directly at them, one at a time. RFID (Radio-Frequency Identification) uses radio waves instead, which means:
 
@@ -1291,8 +1291,8 @@ Her accuracy: about 85%. Not great, but now she knows. She fixes the numbers and
 
 A warehouse is not just a big room where you pile stuff. A well-organized warehouse is designed like a factory — everything has a purpose and a place, and the flow of goods is planned to minimize wasted movement.
 
-![Warehouse interior with tall pallet racking and forklifts — this is what a typical mid-size warehouse looks like](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Eagle_Warehouse_Putaway.jpg/1280px-Eagle_Warehouse_Putaway.jpg)
-*A real warehouse with pallet racking. Notice the aisle layout, height levels, and forklift access. (Image: Wikimedia Commons, CC BY-SA 4.0)*
+![Modern warehouse interior with tall pallet racking — rows of shelves storing goods on pallets](https://upload.wikimedia.org/wikipedia/commons/a/a2/Modern_warehouse_with_pallet_rack_storage_system.jpg)
+*A modern warehouse with pallet racking. Notice the aisle layout, height levels, and organised storage. (Image: Wikimedia Commons, CC BY-SA 4.0)*
 
 ### 8.1 The Flow of Goods Through a Warehouse
 
@@ -1403,8 +1403,8 @@ Different products need different types of shelving:
 
 **Pallet racking:** Tall metal frames that hold pallets. Forklifts place and retrieve pallets. Most common in warehouses.
 
-![Forklift operating in a warehouse aisle between tall pallet racks](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Forklift_truck_in_warehouse.jpg/1280px-Forklift_truck_in_warehouse.jpg)
-*A forklift placing a pallet on racking. Drivers need certification and follow strict safety rules. (Image: Wikimedia Commons, CC BY-SA 4.0)*
+![Forklift loading containers at a warehouse](https://upload.wikimedia.org/wikipedia/commons/7/77/Container_loading_with_forklift_at_warehouse_in_Thailand.jpg)
+*A forklift loading goods at a warehouse. Forklift drivers need certification and follow strict safety rules. (Image: Wikimedia Commons, CC BY-SA 4.0)*
 
 **Drive-in racking:** Forklifts drive INTO the rack to place pallets deep inside. Very space-efficient, but you can only access the front pallet (last in, first out).
 
@@ -2405,8 +2405,8 @@ Weeks before the sale, Flipkart's AI models predict:
 
 They pre-position inventory so that when you order a phone during the sale, it's likely already at a warehouse in your city, not 2,000 km away.
 
-![Automated warehouse robots moving shelves in a fulfilment centre](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Amazon_Robotics_-_Kiva_Robots_in_Warehouse.jpg/1280px-Amazon_Robotics_-_Kiva_Robots_in_Warehouse.jpg)
-*Amazon Kiva robots — these orange robots slide under shelving units and carry them to human pickers, eliminating walking entirely. (Image: Wikimedia Commons, CC BY 2.0)*
+![Amazon warehouse robot carrying shelving units in a fulfilment centre](https://upload.wikimedia.org/wikipedia/commons/d/db/Amazon_warehouse_robot_2020.JPG)
+*Amazon warehouse robots — these robots slide under shelving units and carry them to human pickers, eliminating walking entirely. (Image: Wikimedia Commons, CC BY 2.0)*
 
 ### 15.2 Warehouse Robots and Automation
 
