@@ -9,7 +9,7 @@
 Throughout this guide, we'll follow **Nadia**, a fictional entrepreneur, as she builds a spice business from scratch. Her journey mirrors what thousands of real business owners experience, and we'll use her story to make every concept concrete.
 
 **The beginning:**
-Nadia loves cooking and starts blending her own spice mixes at home — a a Biryani Masala, a Garam Masala, a Chai Masala, and a Tandoori Rub. Friends rave about them. She starts selling at a local weekend market (haat) and to friends.
+Nadia loves cooking and starts blending her own spice mixes at home — a Biryani Masala, a Garam Masala, a Chai Masala, and a Tandoori Rub. Friends rave about them. She starts selling at a local weekend market (haat) and to friends.
 
 **Her starting inventory setup:**
 - 15 spice blends (15 SKUs) — things like Biryani Masala, Pav Bhaji Masala, Chole Masala, Chai Masala, and more
@@ -47,6 +47,32 @@ Your local grocery store doesn't call the dairy farm when you want milk. They pr
 ### 1.2 Types of Inventory
 
 There are five main types. Think of them as stages in a journey from raw material to customer.
+
+```
+  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐    ┌──────────────┐
+  │              │    │              │    │              │    │              │
+  │    RAW       │───▶│   WORK IN    │───▶│   FINISHED   │───▶│  CUSTOMER    │
+  │  MATERIALS   │    │  PROGRESS    │    │    GOODS     │    │              │
+  │              │    │   (WIP)      │    │              │    │              │
+  │  Haldi,      │    │  Masala being│    │  Sealed jars │    │  Happy       │
+  │  jeera,      │    │  mixed &     │    │  with labels,│    │  customer!   │
+  │  dhania...   │    │  jarred      │    │  ready to    │    │              │
+  │              │    │              │    │  sell        │    │              │
+  └──────────────┘    └──────────────┘    └──────────────┘    └──────────────┘
+        ▲                                                            │
+        │                    ┌──────────────┐                        │
+        │                    │  PACKAGING   │                        │
+        │                    │  Jars, lids, │                        │
+        │                    │  labels, bags│                        │
+        │                    └──────────────┘                        │
+        │                                                            │
+        │                    ┌──────────────┐                        │
+        │                    │     MRO      │                        │
+        └────────────────────│  Scale,      │────────────────────────┘
+           (supports the     │  towels,     │    (supports the
+            whole process)   │  cleaning    │     whole process)
+                             └──────────────┘
+```
 
 #### Raw Materials
 The basic ingredients you start with — things you buy to turn into something else.
@@ -114,6 +140,27 @@ Here's the interesting part — **the same physical object can be either one,** 
 
 ### 1.4 The Cost of Holding Inventory
 
+```
+  HOLDING COST BREAKDOWN (20-35% of inventory value per year)
+
+  ┌─────────────────────────────────────────────────────────┐
+  │                                                         │
+  │  ██████████████████  Opportunity Cost (8-15%)           │
+  │  ████████████████    "My ₹10 lakh is stuck in stock    │
+  │                       instead of earning returns"       │
+  │                                                         │
+  │  ████████            Storage Cost (2-5%)                │
+  │                      "Rent, electricity, shelving"      │
+  │                                                         │
+  │  ██████              Insurance & Protection (1-3%)      │
+  │                      "Insurance, security"              │
+  │                                                         │
+  │  ████████████████    Risk Cost (5-15%)                  │
+  │  ██████████████      "Damage, theft, expiry,           │
+  │                       obsolescence"                     │
+  └─────────────────────────────────────────────────────────┘
+```
+
 Here's something that surprises most beginners: **inventory is NOT free to hold.** Even after you've paid for it, it keeps costing you money every single day it sits there.
 
 The total cost of holding inventory is typically **20-35% of its value per year.** That means if you're holding ₹10,00,000 (₹10 lakh) worth of inventory, it costs you ₹2,00,000-₹3,50,000 per year just to HAVE it.
@@ -131,7 +178,7 @@ Think of it in four buckets:
 4. **Things go wrong** (5-15%): Items get damaged, stolen, or become obsolete. Food spoils. Fashion goes out of style. Technology becomes outdated.
 
 **Real-life example:**
-In 2001, Cisco wrote off **$2.2 billion** in excess inventory when the dot-com bubble burst. They had ordered tons of networking equipment based on overly optimistic forecasts. When demand crashed, they were stuck with warehouses full of stuff nobody wanted. $2.2 billion — gone.
+In 2001, Cisco wrote off **$2.2 billion (about ₹18,000 crore)** in excess inventory when the dot-com bubble burst. They had ordered tons of networking equipment based on overly optimistic forecasts. When demand crashed, they were stuck with warehouses full of stuff nobody wanted. ₹18,000 crore — gone.
 
 ### 1.5 The Cost of NOT Having Inventory (Stockouts)
 
@@ -143,10 +190,25 @@ The flip side is just as painful. When you don't have what customers want:
 - **Reputation damage:** "They're always out of stock" becomes your brand image
 
 **Real-life example:**
-During the 2020-2021 chip shortage, car makers like Ford couldn't finish building trucks because they were missing a single $1 computer chip. A $1 chip held up a $50,000 truck. Ford estimated the shortage cost them **$2.5 billion** in 2021 alone.
+During the 2020-2021 chip shortage, car makers like Ford and Maruti Suzuki couldn't finish building vehicles because they were missing a single ₹80 computer chip. An ₹80 chip held up a ₹15,00,000 car. Ford estimated the shortage cost them **$2.5 billion (₹20,000+ crore)** in 2021 alone. Maruti Suzuki lost production of over 1.6 lakh cars.
 
 **The big takeaway:**
 Inventory management is a balancing act. Too much inventory = wasted money. Too little inventory = lost sales. The whole point of everything in this guide is to help you find the sweet spot.
+
+```
+  THE INVENTORY BALANCING ACT
+
+  Too Much Inventory              Just Right                Too Little Inventory
+  ❌ Wasted money                ✅ THE SWEET SPOT          ❌ Lost sales
+  ❌ Cash locked up              ✅ Happy customers          ❌ Angry customers
+  ❌ Risk of damage/expiry       ✅ Cash flowing             ❌ Rush orders (expensive)
+  ❌ Storage costs piling up     ✅ Low waste                ❌ Reputation damage
+
+       ₹₹₹ sitting idle   ◀━━━━━━ GOAL ━━━━━━▶    Shelves are empty
+       in your godown              🎯                customers walk away
+
+  The entire field of inventory management exists to find this sweet spot.
+```
 
 ### Nadia's Story: Chapter 1
 
@@ -258,17 +320,17 @@ Barcodes have a limitation — you need to point a scanner directly at them, one
 - You can read through boxes, bags, even walls (within range)
 
 **The three pieces of an RFID system:**
-1. **RFID tag** — a tiny chip with an antenna, stuck on the item (costs $0.05-$15 each)
-2. **RFID reader** — a device that sends out radio waves and listens for tag responses ($500-$5,000)
+1. **RFID tag** — a tiny chip with an antenna, stuck on the item (costs ₹4-₹1,200 each)
+2. **RFID reader** — a device that sends out radio waves and listens for tag responses (₹40,000-₹4,00,000)
 3. **Software** — makes sense of all the data
 
 **Think of it like this:** Barcodes are like reading name tags — you walk up to each person and read their tag one by one. RFID is like calling out "who's in the room?" and everyone answers at once.
 
 | Tag type | How it works | Range | Cost | Used for |
 |----------|-------------|-------|------|----------|
-| Passive | No battery — powered by the reader's signal | 1-12 meters | $0.05-$0.50 | Retail clothing, warehouse boxes |
-| Active | Has its own battery, always broadcasting | Up to 100 meters | $5-$15 | Vehicles, shipping containers |
-| Semi-passive | Battery helps, but only responds when asked | 10-30 meters | $1-$5 | Temperature monitoring in transit |
+| Passive | No battery — powered by the reader's signal | 1-12 meters | ₹4-₹40 | Retail clothing, warehouse boxes |
+| Active | Has its own battery, always broadcasting | Up to 100 meters | ₹400-₹1,200 | Vehicles, shipping containers |
+| Semi-passive | Battery helps, but only responds when asked | 10-30 meters | ₹80-₹400 | Temperature monitoring in transit |
 
 **Real-life example — Zara clothing stores:**
 Zara sews an RFID chip into the label of every single garment. The results:
@@ -302,14 +364,14 @@ These go beyond just "where is it?" — they track the condition of items: tempe
 
 Nadia creates her first SKU system:
 ```
-SP-BBQ-MLD-4    Spice > BBQ Rub > Mild > 4oz jar
-SP-BBQ-HOT-4    Spice > BBQ Rub > Hot > 4oz jar
-SP-ZTR-REG-4    Spice > Za'atar > Regular > 4oz jar
-SP-CRY-MLD-4    Spice > Curry > Mild > 4oz jar
-SP-CRY-HOT-4    Spice > Curry > Hot > 4oz jar
+SP-BIR-REG-100  Spice > Biryani Masala > Regular > 100g jar
+SP-GAR-REG-100  Spice > Garam Masala > Regular > 100g jar
+SP-CHA-REG-100  Spice > Chai Masala > Regular > 100g jar
+SP-CHO-REG-100  Spice > Chole Masala > Regular > 100g jar
+SP-TAN-REG-100  Spice > Tandoori Rub > Regular > 100g jar
 ```
 
-She's still small (15 SKUs), so she writes these on each jar's label. No barcodes yet — she doesn't need them at farmers market scale. But she starts a Google Sheet with one row per SKU, tracking how many jars she has.
+She's still small (15 SKUs), so she writes these on each jar's label. No barcodes yet — she doesn't need them at local market scale. But she starts a Google Sheet with one row per SKU, tracking how many jars she has.
 
 Six months in, she opens an online store on Amazon India and her own Shopify website. Now she's getting 5-10 online orders per day on top of local market sales. She realizes she needs barcodes — typing SKUs manually for each order is slow and error-prone. She buys a ₹2,500 USB barcode scanner and prints barcode labels for each product using a ₹8,000 thermal label printer.
 
@@ -321,19 +383,48 @@ When you own inventory, you need to know its value — for taxes, for your finan
 
 ### 3.1 Why This Gets Complicated
 
-Imagine you own a bookstore. You buy copies of the same novel at different times, and the price keeps changing:
+Imagine you own a bookshop in Delhi. You buy copies of the same novel at different times, and the price keeps changing:
 
 ```
-January:  Bought 100 copies at $8 each
-March:    Bought 100 copies at $9 each
-June:     Bought 100 copies at $10 each
+January:  Bought 100 copies at ₹300 each
+March:    Bought 100 copies at ₹350 each
+June:     Bought 100 copies at ₹400 each
 ```
 
-Now you have 300 copies. You sell 150 of them in July for $15 each.
+Now you have 300 copies. You sell 150 of them in July for ₹500 each.
 
-**The question:** When calculating your profit, what did those 150 copies cost YOU? Was it $8? $9? $10? Some mix?
+**The question:** When calculating your profit, what did those 150 copies cost YOU? Was it ₹300? ₹350? ₹400? Some mix?
 
 The answer depends on which **valuation method** you choose. Different methods give different profit numbers from the exact same sales. This isn't a mistake — it's a choice, and each method has a purpose.
+
+```
+  FIFO vs LIFO vs WEIGHTED AVERAGE — VISUAL COMPARISON
+
+  Same 300 books. Same 150 sold. Different profit.
+
+  ┌──────────────────────────────────────────────────────────────┐
+  │  FIFO (sell oldest first)                                    │
+  │  ┌─────────────┬──────────────┬──────────────┐              │
+  │  │ Jan: ₹300   │ Mar: ₹350    │ Jun: ₹400    │              │
+  │  │ ██ SOLD ██  │ █ HALF SOLD █│  (still here) │              │
+  │  └─────────────┴──────────────┴──────────────┘              │
+  │  Profit: ₹27,500 (highest — old cheap stock counted first)  │
+  │                                                              │
+  │  LIFO (sell newest first)                                    │
+  │  ┌─────────────┬──────────────┬──────────────┐              │
+  │  │ Jan: ₹300   │ Mar: ₹350    │ Jun: ₹400    │              │
+  │  │ (still here)│ █ HALF SOLD █│ ██ SOLD ██   │              │
+  │  └─────────────┴──────────────┴──────────────┘              │
+  │  Profit: ₹17,500 (lowest — expensive new stock counted)     │
+  │                                                              │
+  │  WEIGHTED AVERAGE (all at average cost)                      │
+  │  ┌─────────────────────────────────────────────┐            │
+  │  │ Everything at ₹350 average                   │            │
+  │  │ ████████████ SOLD ████████████  (remaining)  │            │
+  │  └─────────────────────────────────────────────┘            │
+  │  Profit: ₹22,500 (middle ground)                            │
+  └──────────────────────────────────────────────────────────────┘
+```
 
 ### 3.2 FIFO (First-In, First-Out)
 
@@ -341,20 +432,20 @@ The answer depends on which **valuation method** you choose. Different methods g
 
 **Think of it like a shelf of milk:** The oldest milk is at the front, and customers grab it first. The newest milk sits at the back.
 
-**Using our bookstore example (selling 150 copies):**
+**Using our bookshop example (selling 150 copies):**
 ```
-First, we "sell" the 100 copies bought in January at $8:     100 × $8  = $800
-Then, we "sell" 50 of the copies bought in March at $9:       50 × $9  = $450
-                                                               Total cost: $1,250
+First, we "sell" the 100 copies bought in January at ₹300:   100 × ₹300 = ₹30,000
+Then, we "sell" 50 of the copies bought in March at ₹350:     50 × ₹350 = ₹17,500
+                                                               Total cost: ₹47,500
 
-Revenue:      150 × $15 = $2,250
-Cost (FIFO):              $1,250
-Profit:                   $1,000
+Revenue:      150 × ₹500 = ₹75,000
+Cost (FIFO):               ₹47,500
+Profit:                    ₹27,500
 
 What's left on the shelf:
-  50 copies at $9  = $450
-  100 copies at $10 = $1,000
-  Remaining value: $1,450
+  50 copies at ₹350  = ₹17,500
+  100 copies at ₹400 = ₹40,000
+  Remaining value:     ₹57,500
 ```
 
 **When prices are going up, FIFO reports the highest profit** — because you're counting the cheapest (oldest) items as sold, making your costs look low.
@@ -365,18 +456,18 @@ What's left on the shelf:
 
 **Plain English:** The stuff you bought most recently is treated as sold first. Like a stack of plates — you take the one on top (the last one added).
 
-**Same bookstore, same 150 copies:**
+**Same bookshop, same 150 copies:**
 ```
-First, we "sell" the 100 copies bought in June at $10:    100 × $10 = $1,000
-Then, we "sell" 50 of the copies bought in March at $9:    50 × $9  = $450
-                                                            Total cost: $1,450
+First, we "sell" the 100 copies bought in June at ₹400:   100 × ₹400 = ₹40,000
+Then, we "sell" 50 of the copies bought in March at ₹350:   50 × ₹350 = ₹17,500
+                                                              Total cost: ₹57,500
 
-Revenue:      150 × $15 = $2,250
-Cost (LIFO):              $1,450
-Profit:                   $800
+Revenue:      150 × ₹500 = ₹75,000
+Cost (LIFO):               ₹57,500
+Profit:                    ₹17,500
 ```
 
-**Same exact sales. $200 less profit.** Why? Because LIFO expenses the expensive newer items first.
+**Same exact sales. ₹10,000 less profit.** Why? Because LIFO expenses the expensive newer items first.
 
 **Why would anyone want lower profits?** Taxes. Lower reported profit = lower tax bill. This is why many US companies choose LIFO. (Note: LIFO is only allowed in the US. Most of the world requires FIFO.)
 
@@ -386,15 +477,15 @@ Profit:                   $800
 
 **Plain English:** Don't overthink which items you sold first. Just take the average cost of everything you have and use that.
 
-**Same bookstore:**
+**Same bookshop:**
 ```
-Total cost of all books: $800 + $900 + $1,000 = $2,700
+Total cost of all books: ₹30,000 + ₹35,000 + ₹40,000 = ₹1,05,000
 Total books: 300
-Average cost: $2,700 ÷ 300 = $9.00 per book
+Average cost: ₹1,05,000 ÷ 300 = ₹350 per book
 
 Sell 150 copies:
-Cost: 150 × $9.00 = $1,350
-Profit: $2,250 - $1,350 = $900
+Cost: 150 × ₹350 = ₹52,500
+Profit: ₹75,000 - ₹52,500 = ₹22,500
 ```
 
 **Simple, fair, and in the middle** of FIFO and LIFO. Gas stations basically work this way — when new fuel is pumped into the underground tank, it mixes with the old fuel, and the cost averages out.
@@ -403,7 +494,7 @@ Profit: $2,250 - $1,350 = $900
 
 **Plain English:** Track the actual cost of every individual item. Only practical for expensive, unique, or serialized things.
 
-**Real-life example:** A car dealership knows exactly what they paid for each car (every car has a unique VIN). When they sell a specific car for $55,000 that they bought for $42,000, the profit is exactly $13,000. No averaging or assumptions needed.
+**Real-life example:** A Maruti Suzuki dealer knows exactly what they paid for each car (every car has a unique chassis number). When they sell a specific Jimny for ₹15,00,000 that they bought from Maruti for ₹12,50,000, the profit is exactly ₹2,50,000. No averaging or assumptions needed.
 
 Used for: cars, jewelry, art, custom machinery — anything expensive and unique.
 
@@ -452,51 +543,74 @@ ABC analysis sorts your products into three groups:
 | **B** | Important but not critical | 20-30% of SKUs | 15-25% of total value | Moderate attention, periodic review |
 | **C** | The long tail — low value, many items | 50-70% of SKUs | 5-10% of total value | Keep it simple, bulk ordering, minimal attention |
 
+```
+  ABC ANALYSIS — THE PARETO CURVE
+
+  100% ┤                                          ╭────────────────
+       │                                    ╭─────╯   C items
+  95%  ┤                              ╭─────╯         (50-70% of SKUs
+       │                        ╭─────╯                but only 5-10%
+  80%  ┤                  ╭─────╯                      of value)
+       │             ╭────╯  B items
+  70%  ┤        ╭────╯       (20-30% of SKUs,
+       │   ╭────╯            15-25% of value)
+       │  ╱
+       │ ╱  A items
+       │╱   (10-20% of SKUs,
+  0%   ┤    70-80% of value)
+       └──────┬───────────┬──────────────────┬──────
+              20%         50%                100%
+                    % of SKUs (products)
+
+  Key insight: A small number of products drive most of your revenue.
+  Focus your time and energy on A items.
+```
+
 ### 4.3 How to Do It (Step by Step)
 
-Let's use a simple example — an auto parts store with 10 items:
+Let's use a simple example — a two-wheeler parts shop in Ludhiana with 10 items:
 
 **Step 1: List every product and its annual sales**
 ```
-Engine blocks:      $120,000/year
-Transmissions:       $95,000
-Brake pads:          $40,000
-Oil filters:         $35,000
-Spark plugs:         $25,000
-Wiper blades:        $12,000
-Air fresheners:       $5,000
-License plate frames: $3,000
-Valve stem caps:      $1,500
-Keychains:              $800
-                    ---------
-Total:              $337,300
+Engines (complete):    ₹48,00,000/year
+Gear assemblies:       ₹38,00,000
+Brake shoes/pads:      ₹16,00,000
+Oil filters:           ₹14,00,000
+Spark plugs:           ₹10,00,000
+Clutch plates:          ₹5,00,000
+Air filters:            ₹2,00,000
+Chain sprocket kits:    ₹1,20,000
+Valve caps:               ₹60,000
+Keychains/accessories:    ₹32,000
+                       ----------
+Total:               ₹1,35,12,000
 ```
 
 **Step 2: Sort from highest to lowest (already done) and calculate running percentages**
 ```
-Item              Sales      % of Total   Running Total   Class
-Engine blocks     $120,000   35.6%        35.6%           A
-Transmissions     $95,000    28.2%        63.7%           A
-Brake pads        $40,000    11.9%        75.6%           B
-Oil filters       $35,000    10.4%        86.0%           B
-Spark plugs       $25,000    7.4%         93.4%           B
-Wiper blades      $12,000    3.6%         96.9%           C
-Air fresheners    $5,000     1.5%         98.4%           C
-Plate frames      $3,000     0.9%         99.3%           C
-Valve caps        $1,500     0.4%         99.8%           C
-Keychains         $800       0.2%         100.0%          C
+Item               Sales         % of Total   Running Total   Class
+Engines            ₹48,00,000    35.5%        35.5%           A
+Gear assemblies    ₹38,00,000    28.1%        63.7%           A
+Brake shoes        ₹16,00,000    11.8%        75.5%           B
+Oil filters        ₹14,00,000    10.4%        85.9%           B
+Spark plugs        ₹10,00,000     7.4%        93.3%           B
+Clutch plates       ₹5,00,000     3.7%        97.0%           C
+Air filters         ₹2,00,000     1.5%        98.5%           C
+Chain kits          ₹1,20,000     0.9%        99.4%           C
+Valve caps            ₹60,000     0.4%        99.8%           C
+Keychains             ₹32,000     0.2%       100.0%           C
 ```
 
 **Result:**
-- **A items** (2 products, 20% of SKUs): Engine blocks + transmissions = 63.7% of sales
-- **B items** (3 products, 30%): Brake pads + oil filters + spark plugs = 29.7%
+- **A items** (2 products, 20% of SKUs): Engines + gear assemblies = 63.7% of sales
+- **B items** (3 products, 30%): Brake shoes + oil filters + spark plugs = 29.6%
 - **C items** (5 products, 50%): Everything else = 6.6%
 
 **Step 3: Manage differently based on class**
 
-**Engine blocks (A-class):** Count weekly. Never run out. Negotiate best pricing. Track every unit. Review demand monthly.
+**Engines (A-class):** Count weekly. Never run out. Negotiate best pricing. Track every unit. Review demand monthly.
 
-**Brake pads (B-class):** Count monthly. Keep reasonable safety stock. Standard supplier terms. Review quarterly.
+**Brake shoes (B-class):** Count monthly. Keep reasonable safety stock. Standard supplier terms. Review quarterly.
 
 **Keychains (C-class):** Count once a year. Just keep "some" in stock. Buy from the cheapest supplier. Don't waste time analyzing this.
 
@@ -504,7 +618,7 @@ Keychains         $800       0.2%         100.0%          C
 
 Sometimes a cheap item is more important than an expensive one.
 
-**Imagine this:** A $2 rubber O-ring is a C-class item by revenue. But if you run out of them, your $50 million production line shuts down completely.
+**Imagine this:** A ₹20 rubber O-ring is a C-class item by revenue. But if you run out of them, your ₹50 crore production line shuts down completely.
 
 Smart companies add more factors to their ABC analysis:
 - **Criticality:** What happens if we run out? (Minor inconvenience or factory shutdown?)
@@ -512,7 +626,7 @@ Smart companies add more factors to their ABC analysis:
 - **Supplier risk:** Only one supplier in the world makes this?
 - **Demand predictability:** Steady sales or wild swings?
 
-**Real-life example:** In aerospace, a tiny titanium bolt might cost $15 (C-class by value) but it comes from one specialized supplier with a 16-week lead time and is needed for every single aircraft. It gets managed like an A-class item.
+**Real-life example:** In aerospace, a tiny titanium bolt might cost ₹1,200 (C-class by value) but it comes from one specialized supplier with a 16-week lead time and is needed for every single aircraft. It gets managed like an A-class item.
 
 ### Nadia's Story: Chapter 4
 
@@ -535,6 +649,30 @@ If you could see the future and know exactly how much of each product you'll sel
 Of course, you can't see the future. So you forecast — which is a fancy way of saying "make your best educated guess based on patterns."
 
 **The golden rule of forecasting: All forecasts are wrong. The goal is to be less wrong.**
+
+```
+  DEMAND PATTERNS — WHAT YOUR SALES DATA LOOKS LIKE
+
+  TREND (steady growth)         SEASONAL (repeating pattern)
+  Sales                         Sales
+   │          ╱                  │    ╱╲      ╱╲      ╱╲
+   │        ╱                    │   ╱  ╲    ╱  ╲    ╱  ╲
+   │      ╱                      │  ╱    ╲  ╱    ╲  ╱    ╲
+   │    ╱                        │ ╱      ╲╱      ╲╱      ╲
+   │  ╱                          │╱
+   └──────────▶ Time             └──────────────────▶ Time
+   "Sales go up every year"      "Diwali spike every October"
+
+  RANDOM NOISE (unpredictable)  SUDDEN SPIKE (black swan)
+  Sales                         Sales
+   │   ╱╲  ╱╲                   │              │╲
+   │  ╱  ╲╱  ╲╱╲                │              │ ╲
+   │ ╱    ╱     ╲ ╱╲            │──────────────│  ╲───
+   │╱  ╲╱        ╲  ╲           │              │
+   └──────────▶ Time            └──────────────▶ Time
+   "No pattern, just noise"     "Viral on Instagram!" or
+                                "Pandemic panic buying"
+```
 
 ### 5.1 What Makes Demand Hard to Predict
 
@@ -693,6 +831,31 @@ The reorder point is the inventory level that triggers you to place a new order.
 **The logic is simple:** You need enough stock to last while you wait for the new order to arrive, plus a little extra in case something goes wrong.
 
 ```
+  REORDER POINT — HOW IT WORKS
+
+  Stock
+  Level
+   60 ┤╲
+      │ ╲                      New stock arrives!
+   50 ┤  ╲                            │
+      │   ╲                           ▼
+   40 ┤    ╲                    ╱╲
+      │     ╲                  ╱  ╲
+   30 ┤      ╲                ╱    ╲
+      │       ╲              ╱      ╲
+   20 ┤........╲............╱........╲........  ◀── REORDER POINT (20 units)
+      │         ╲  ▲       ╱          ╲           "Place order NOW!"
+   13 ┤          ╲ │      ╱            ╲
+      │           ╲│     ╱              ╲
+    5 ┤- - - - - - ╲- - ╱ - - - - - - - ╲- -  ◀── SAFETY STOCK (5 units)
+      │     Lead    ╲  ╱                  ╲        "Emergency buffer"
+    0 ┤     Time     ╲╱
+      └──────┬────────┬─────────┬─────────┬───▶ Time
+         Order      Stock      Order     Stock
+         placed     arrives    placed    arrives
+```
+
+```
 Reorder Point = (Daily Usage × Days to Get More) + Safety Buffer
 ```
 
@@ -780,6 +943,33 @@ But if you order a LOT at once to avoid frequent ordering, you'll have piles of 
 
 **EOQ finds the sweet spot** — the order quantity where the combined cost of ordering and holding is as low as possible.
 
+```
+  EOQ — THE SWEET SPOT
+
+  Cost
+  (₹)
+   │╲
+   │ ╲                                       ╱  Holding Cost
+   │  ╲                                    ╱    (goes UP as you
+   │   ╲        TOTAL COST               ╱      order more —
+   │    ╲      ╱          ╲             ╱       more stock sitting
+   │     ╲   ╱              ╲         ╱         in your godown)
+   │      ╲╱                  ╲─────╱
+   │      ╱╲    ★ Sweet spot!   ╲ ╱
+   │    ╱    ╲   (EOQ)          ╳
+   │  ╱        ╲              ╱   ╲
+   │╱  Ordering  ╲──────────╱       ╲
+   │   Cost         ╲────╱           ╲
+   │   (goes DOWN     ╲╱
+   │   as you order
+   │   more — fewer
+   │   orders to place)
+   └──────────────────────┬──────────────────▶ Order Quantity
+                         EOQ
+                    (order this many
+                     each time)
+```
+
 **Think of it like grocery shopping:**
 - If you buy one apple per day (visiting the store daily), your fridge is never full, but you waste tons of time shopping.
 - If you buy 365 apples once a year, you shop once, but most apples rot before you eat them.
@@ -790,14 +980,14 @@ But if you order a LOT at once to avoid frequent ordering, you'll have piles of 
 EOQ = √(2 × Annual Demand × Cost Per Order ÷ Holding Cost Per Unit Per Year)
 ```
 
-**Worked example — an office ordering printer paper:**
+**Worked example — an office in Mumbai ordering printer paper:**
 ```
 They use 10,000 reams per year
-Each order costs $50 to process (staff time, paperwork, receiving)
-Storing one ream for a year costs $2 (warehouse space, insurance, tied-up money)
+Each order costs ₹500 to process (staff time, paperwork, receiving)
+Storing one ream for a year costs ₹20 (warehouse space, insurance, tied-up money)
 
-EOQ = √(2 × 10,000 × 50 ÷ 2)
-    = √500,000
+EOQ = √(2 × 10,000 × 500 ÷ 20)
+    = √5,00,000
     = 707 reams per order
 
 That means: order about 700 reams at a time, roughly every 26 days.
@@ -805,17 +995,17 @@ That means: order about 700 reams at a time, roughly every 26 days.
 
 **Why this is the sweet spot:**
 ```
-Ordering 100 at a time:   100 orders/year × $50 = $5,000 ordering cost
-                          50 avg on hand × $2 = $100 holding cost
-                          Total: $5,100/year
+Ordering 100 at a time:   100 orders/year × ₹500 = ₹50,000 ordering cost
+                          50 avg on hand × ₹20 = ₹1,000 holding cost
+                          Total: ₹51,000/year
 
-Ordering 5,000 at a time: 2 orders/year × $50 = $100 ordering cost
-                          2,500 avg on hand × $2 = $5,000 holding cost
-                          Total: $5,100/year
+Ordering 5,000 at a time: 2 orders/year × ₹500 = ₹1,000 ordering cost
+                          2,500 avg on hand × ₹20 = ₹50,000 holding cost
+                          Total: ₹51,000/year
 
-Ordering 707 (EOQ):      14 orders/year × $50 = $707 ordering cost
-                          354 avg on hand × $2 = $707 holding cost
-                          Total: $1,414/year
+Ordering 707 (EOQ):      14 orders/year × ₹500 = ₹7,070 ordering cost
+                          354 avg on hand × ₹20 = ₹7,070 holding cost
+                          Total: ₹14,140/year
 ```
 
 **Notice: at EOQ, ordering cost and holding cost are exactly equal.** That's always the case — it's a mathematical property of the sweet spot.
@@ -893,7 +1083,7 @@ Exactly what it sounds like: shut everything down, send in teams, count every si
 5. **Update the system** with the real numbers
 6. **Investigate** big discrepancies — don't just fix the number, find out WHY
 
-**Real-life example:** IKEA counts every product in every store once per year. With 9,500+ products, it takes hundreds of employees and the store closes for the count. Cost: ₹1.5-4 crore per store, per count.
+**Real-life example:** IKEA counts every product in every store once per year. With 9,500+ products, it takes hundreds of employees and the store closes for the count. For a large store like IKEA, this costs ₹1.5-4 crore per store, per count.
 
 **The problem:** You only know your inventory is accurate on the day you counted. The next day, it starts drifting again.
 
@@ -937,10 +1127,26 @@ Accuracy = 475 ÷ 500 × 100 = 95%
 ```
 
 **Benchmarks:**
-- World-class (Amazon, Toyota): 99%+
-- Good: 95-99%
-- Average: 80-95%
-- Struggling: Below 80% (things are chaotic)
+
+```
+  INVENTORY ACCURACY SCALE — WHERE DO YOU STAND?
+
+  ◀── BAD                                                    GREAT ──▶
+
+  ┌──────────┬──────────────────┬────────────────────┬──────────────┐
+  │ Below 80%│    80% - 95%     │    95% - 99%       │   99%+       │
+  │          │                  │                    │              │
+  │ CHAOTIC  │   AVERAGE        │    GOOD            │  WORLD-CLASS │
+  │          │                  │                    │              │
+  │ "We have │  "We mostly      │  "Rarely           │ "We know     │
+  │  no idea │   know what      │   surprised by     │  exactly     │
+  │  what we │   we have"       │   wrong counts"    │  what we     │
+  │  have"   │                  │                    │  have"       │
+  │          │  Most small      │  Well-managed      │  Amazon,     │
+  │          │  Indian shops    │  businesses        │  Toyota      │
+  └──────────┴──────────────────┴────────────────────┴──────────────┘
+                         ▲ Your goal: move RIGHT over time
+```
 
 ### 7.4 Finding Out WHY Numbers Don't Match
 
@@ -1124,6 +1330,29 @@ The computer always knows where everything is. The human just needs to follow th
 
 Picking — pulling items off shelves to fill customer orders — is the most expensive part of warehouse work, using **50-65% of all warehouse labor.** Most of that cost is walking.
 
+```
+  PICKING METHODS COMPARED
+
+  ┌─────────────────┬─────────────────┬─────────────────┬─────────────────┐
+  │  SINGLE ORDER   │  BATCH PICKING  │  ZONE PICKING   │  WAVE PICKING   │
+  │                 │                 │                 │                 │
+  │  1 person       │  1 person       │  Multiple       │  Orders grouped │
+  │  1 order        │  10-20 orders   │  pickers, each  │  by time/       │
+  │  1 trip         │  1 trip         │  owns a zone    │  carrier        │
+  │                 │                 │                 │                 │
+  │  ○ ──▶ walk     │  ○ ──▶ walk     │  ○  ○  ○  ○    │  Wave 1: 2 PM   │
+  │       ──▶ walk  │       (all at   │  Z1 Z2 Z3 Z4   │  Wave 2: 4 PM   │
+  │       ──▶ walk  │        once)    │  ──▶──▶──▶──▶  │  Wave 3: 6 PM   │
+  │                 │                 │  (assembly line)│                 │
+  │  SIMPLE but     │  LESS WALKING   │  FAST but needs │  ORGANIZED      │
+  │  lots of        │  but needs      │  coordination   │  shipping       │
+  │  walking        │  sorting after  │                 │  windows        │
+  │                 │                 │                 │                 │
+  │  Best: <50      │  Best: 50-500   │  Best: 500+     │  Best: 1000+    │
+  │  orders/day     │  orders/day     │  orders/day     │  orders/day     │
+  └─────────────────┴─────────────────┴─────────────────┴─────────────────┘
+```
+
 **Picking methods, from simplest to most complex:**
 
 **Single order picking:** One person, one order. Walk through the warehouse, grab everything for that order, come back. Simple but lots of walking.
@@ -1191,7 +1420,30 @@ Think of inventory like groceries (you buy them and they're gone in days). Asset
 Every asset goes through the same journey:
 
 ```
-Plan → Buy → Receive & Tag → Deploy → Use & Maintain → Depreciate → Retire/Dispose
+  ASSET LIFECYCLE — THE COMPLETE JOURNEY
+
+  ┌──────────┐   ┌──────────┐   ┌──────────┐   ┌──────────┐
+  │          │   │          │   │          │   │          │
+  │  1.PLAN  │──▶│  2. BUY  │──▶│ 3. TAG & │──▶│4. DEPLOY │
+  │          │   │          │   │ REGISTER  │   │          │
+  │ "Do we   │   │ Purchase │   │ Asset ID, │   │ Assign   │
+  │  need    │   │ order,   │   │ serial #, │   │ to user, │
+  │  this?"  │   │ vendor,  │   │ photo,    │   │ location │
+  │ TCO?     │   │ price    │   │ warranty  │   │          │
+  └──────────┘   └──────────┘   └──────────┘   └──────────┘
+                                                     │
+       ┌─────────────────────────────────────────────┘
+       ▼
+  ┌──────────┐   ┌──────────┐   ┌──────────┐
+  │          │   │          │   │          │
+  │ 5. USE & │──▶│6.DEPRECI-│──▶│7. RETIRE │
+  │ MAINTAIN │   │  ATE     │   │ /DISPOSE │
+  │          │   │          │   │          │
+  │ Repairs, │   │ Value    │   │ Sell,    │
+  │ service, │   │ decreases│   │ scrap,   │
+  │ work     │   │ on books │   │ donate,  │
+  │ orders   │   │ each year│   │ recycle  │
+  └──────────┘   └──────────┘   └──────────┘
 ```
 
 Let's walk through each stage.
@@ -1304,6 +1556,31 @@ When you buy a machine for ₹10 lakh, its value doesn't disappear from your boo
 - It affects how much tax you pay (depreciation reduces your taxable profit)
 - It shows the "true" value of your assets at any point in time
 - It helps you plan when to replace things
+
+```
+  DEPRECIATION METHODS COMPARED — ₹60,000 Computer over 5 Years
+
+  Book Value
+  (₹)
+  60,000 ┤╲
+         │  ╲  Straight-Line          Written Down Value (WDV)
+  50,000 ┤   ╲  (same amount            ╲
+         │    ╲  every year)              ╲
+  40,000 ┤     ╲                           ╲
+         │      ╲                            ╲
+  30,000 ┤       ╲                             ╲
+         │        ╲                              ───
+  20,000 ┤         ╲                                ────
+         │          ╲                                   ─────
+  10,000 ┤           ╲                                       ──────
+         │            ╲                                            ────
+       0 ┤             ╲
+         └───────┬───────┬───────┬───────┬───────┬──▶
+              Year 1   Year 2  Year 3  Year 4  Year 5
+
+  Straight-Line: ₹12,000 every year (simple, predictable)
+  WDV (40%):     ₹24,000 → ₹14,400 → ₹8,640 → ... (more early, less later)
+```
 
 **The three main methods, explained simply:**
 
@@ -1717,6 +1994,28 @@ When you sell online — whether on Amazon, Flipkart, Meesho, or your own websit
 
 ### 14.2 Inventory Models for Online Sellers
 
+```
+  E-COMMERCE FULFILLMENT MODELS — WHICH ONE ARE YOU?
+
+  ┌─────────────────────────────────────────────────────────────────┐
+  │                                                                 │
+  │  MODEL 1: SELF-FULFILLMENT     MODEL 2: MARKETPLACE (FBA)      │
+  │  You ──▶ Your godown ──▶       You ──▶ Amazon/Flipkart         │
+  │          Customer               warehouse ──▶ Customer          │
+  │  ✅ Full control               ✅ Fast delivery ("Prime")       │
+  │  ❌ You do all the work        ❌ Storage fees pile up           │
+  │                                                                 │
+  │  MODEL 3: 3PL                  MODEL 4: DROPSHIPPING            │
+  │  You ──▶ Delhivery/            You ──▶ Supplier ships           │
+  │          ShipRocket ──▶                directly ──▶ Customer    │
+  │          Customer                                               │
+  │  ✅ One warehouse,             ✅ Zero inventory risk            │
+  │     all channels               ❌ Zero control over quality      │
+  │  ❌ Less control                                                │
+  │                                                                 │
+  └─────────────────────────────────────────────────────────────────┘
+```
+
 #### Model 1: Self-Fulfillment (You Keep and Ship Everything)
 You keep products in your own space and ship orders yourself.
 
@@ -1774,6 +2073,33 @@ Customer orders on your website
 **Real-life example:** Many Meesho resellers operate on a dropship-like model. They share product catalogues on WhatsApp, collect orders, and Meesho handles the rest. The reseller never holds inventory.
 
 ### 14.3 Multi-Channel Inventory Sync
+
+```
+  MULTI-CHANNEL SYNC — THE PROBLEM AND SOLUTION
+
+  ❌ WITHOUT SYNC (disaster waiting to happen):
+
+  Amazon ──▶ Shows 5 available ┐
+  Flipkart ─▶ Shows 5 available├──▶ 15 promised, only 5 exist!
+  Website ──▶ Shows 5 available ┘
+
+  ✅ WITH CENTRAL SYNC (Unicommerce/EasyEcom):
+
+                   ┌──────────────┐
+                   │   CENTRAL    │
+                   │  INVENTORY   │
+                   │   5 units    │
+                   └──────┬───────┘
+                          │
+              ┌───────────┼───────────┐
+              ▼           ▼           ▼
+         ┌─────────┐ ┌─────────┐ ┌─────────┐
+         │ Amazon  │ │Flipkart │ │ Website │
+         │ Shows 5 │ │ Shows 5 │ │ Shows 5 │
+         └─────────┘ └─────────┘ └─────────┘
+
+  Someone buys 1 on Amazon → Central: 4 → ALL channels show 4
+```
 
 The biggest headache for online sellers: keeping inventory consistent across channels.
 
@@ -1950,6 +2276,24 @@ She looks at a Flipkart news article about warehouse robots and smiles — "Mayb
 ### Phase 2: Set Up a Basic System (Week 3-4)
 
 **Choose your tool based on your size:**
+
+```
+  SYSTEM PROGRESSION — GROW INTO YOUR TOOLS
+
+  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+  │  NOTEBOOK   │    │  GOOGLE     │    │  CLOUD      │    │  FULL ERP   │
+  │  / DIARY    │───▶│  SHEETS     │───▶│  SOFTWARE   │───▶│  SYSTEM     │
+  │             │    │             │    │             │    │             │
+  │ <50 items   │    │ 50-500      │    │ 500-5,000   │    │ 5,000+      │
+  │ Just you    │    │ items       │    │ items       │    │ items       │
+  │             │    │ 1-3 people  │    │ Small team  │    │ 50+ people  │
+  │ Free!       │    │ Free!       │    │ ₹1-5K/month │    │ ₹10K+/month │
+  │             │    │ + scanner   │    │ Zoho,Vyapar │    │ ERPNext,SAP │
+  │             │    │ (₹2,500)    │    │ Tally Prime │    │ Oracle      │
+  └─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘
+       Nadia             Nadia              Nadia              Nadia
+      Month 0           Month 3            Month 12           Future?
+```
 
 | Your situation | Start with |
 |---------------|-----------|
