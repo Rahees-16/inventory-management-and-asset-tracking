@@ -44,6 +44,8 @@ Inventory bridges that gap. It's a buffer between "when things are ready" and "w
 **Real-life example:**
 Your local grocery store doesn't call the dairy farm when you want milk. They predicted you'd want it, stocked it on the shelf yesterday, and it's waiting for you right now. That carton of milk sitting on the shelf? That's inventory.
 
+> **Nadia's world:** Nadia can't roast and grind spices to order at the Saturday market — that would take 20 minutes per customer. So she blends and jars everything during the week, then carries 40-50 ready jars to the haat. Those jars are her inventory: the buffer between "when she makes it" and "when customers want it."
+
 ### 1.2 Types of Inventory
 
 There are five main types. Think of them as stages in a journey from raw material to customer.
@@ -112,6 +114,8 @@ The basic ingredients you start with — things you buy to turn into something e
 **Real-life example:**
 Toyota buys steel coils from steel companies. Those coils sit in Toyota's warehouse as raw materials until they're stamped into car body panels.
 
+> **Nadia's world:** Those 2 kg bags of whole jeera, haldi powder, and lal mirch sitting in her spare room — that's raw material. She can't sell a bag of plain haldi. It only becomes a product once she blends, roasts, and jars it.
+
 #### Work-In-Progress (WIP)
 Things that are being made but aren't finished yet. They're stuck in the middle — you've spent money on them, but you can't sell them.
 
@@ -125,11 +129,15 @@ At a Boeing factory, a half-built airplane fuselage is WIP. The aluminum has bee
 - It takes up space
 - If designs change mid-build, it can become worthless
 
+> **Nadia's world:** On Wednesday evening, Nadia has 6 bowls of spice blends measured and mixed but not yet jarred — that's her WIP. She's already used up the raw spices (spent ₹), but she can't sell loose powder in a bowl. If the power goes out and she can't run her grinder to finish, those bowls just sit there, money stuck in limbo.
+
 #### Finished Goods
 Done! Ready to sell. Boxed up, labeled, sitting on a shelf waiting for a customer.
 
 **Real-life example:**
 An iPhone in Apple's warehouse — boxed, sealed, ready to ship to a store. That's finished goods.
+
+> **Nadia's world:** Those 12 jars of Biryani Masala sitting on her shelf — sealed, labeled, price sticker on — that's finished goods. She grabs them Saturday morning, puts them in a crate, and heads to the market. Ready to sell, zero more work needed.
 
 #### MRO (Maintenance, Repair, and Operations)
 Stuff a business needs to keep running, but it's NOT part of what they sell. Think: light bulbs, cleaning supplies, machine oil, printer paper, safety gloves.
@@ -137,11 +145,15 @@ Stuff a business needs to keep running, but it's NOT part of what they sell. Thi
 **Real-life example:**
 A car factory uses thousands of welding tips per day. They wear out and get replaced constantly. The customer never sees them — they're not part of the car — but without them, the factory stops.
 
+> **Nadia's world:** Paper towels, her kitchen scale, the batteries in that scale, cleaning spray for her work surface — none of this goes into a jar of masala, but without it she can't make anything. When her scale battery dies mid-batch, production stops until she walks to the shop for a new one.
+
 #### Packaging Materials
 Boxes, labels, tape, bubble wrap — everything used to package and ship products.
 
 **Real-life example:**
 Amazon's warehouses stock dozens of different box sizes, air pillows, and tape. Running out of boxes is just as bad as running out of products — orders can't ship without packaging.
+
+> **Nadia's world:** Glass jars (₹12 each), metal lids, printed labels, and the small paper bags she puts jars into for market customers. One week she runs out of lids — she has 30 jars of fresh Garam Masala ready, but can't seal or sell a single one until new lids arrive.
 
 ### 1.3 Inventory vs. Assets: What's the Difference?
 
@@ -162,6 +174,8 @@ Here's the interesting part — **the same physical object can be either one,** 
 | **How long you have it** | Days to months | Years |
 | **Examples** | Products on shelves, raw materials | Machines, vehicles, computers, furniture |
 | **What you track** | How many, what it costs, how fast it sells | Where it is, who has it, how much it's depreciated |
+
+> **Nadia's world:** Her jars of Biryani Masala? Inventory — she'll sell them this Saturday. Her ₹4,500 kitchen grinder and ₹1,200 weighing scale? Assets — she'll use them for years. Same spare room, but two very different types of "stuff."
 
 ### 1.4 The Cost of Holding Inventory
 
@@ -202,6 +216,8 @@ Think of it in four buckets:
 
 4. **Things go wrong** (5-15%): Items get damaged, stolen, or become obsolete. Food spoils. Fashion goes out of style. Technology becomes outdated.
 
+> **Nadia's world:** Nadia's ₹60,000 in spice stock isn't "free" just because she already paid for it. The spare room she uses could be rented out (opportunity cost). Spices lose aroma over time — her 3-month-old Chai Masala smells noticeably weaker than a fresh batch (spoilage risk). And that one time monsoon humidity clumped up an entire batch of Sambar Powder? That's ₹3,000 gone.
+
 **Real-life example:**
 In 2001, Cisco wrote off **$2.2 billion (about ₹18,000 crore)** in excess inventory when the dot-com bubble burst. They had ordered tons of networking equipment based on overly optimistic forecasts. When demand crashed, they were stuck with warehouses full of stuff nobody wanted. ₹18,000 crore — gone.
 
@@ -213,6 +229,8 @@ The flip side is just as painful. When you don't have what customers want:
 - **Lost customers:** They don't just leave — they might never come back
 - **Emergency costs:** You end up paying for expensive rush shipping to get stock
 - **Reputation damage:** "They're always out of stock" becomes your brand image
+
+> **Nadia's world:** A regular customer comes to the haat every Saturday for Biryani Masala. One week Nadia's out. The customer buys from the next stall. Next week they come back — but now they also pick up Garam Masala from that other vendor. Nadia didn't just lose one ₹200 sale, she's slowly losing a loyal customer.
 
 **Real-life example:**
 During the 2020-2021 chip shortage, car makers like Ford and Maruti Suzuki couldn't finish building vehicles because they were missing a single ₹80 computer chip. An ₹80 chip held up a ₹15,00,000 car. Ford estimated the shortage cost them **$2.5 billion (₹20,000+ crore)** in 2021 alone. Maruti Suzuki lost production of over 1.6 lakh cars.
