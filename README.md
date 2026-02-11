@@ -46,10 +46,10 @@ Practice the concepts hands-on with browser-based tools (no installation needed)
 
 | Tool | What it does | File |
 |------|-------------|------|
-| **EOQ Calculator** | Find the optimal order quantity that minimises total cost | [`tools/eoq-calculator.html`](tools/eoq-calculator.html) |
-| **Safety Stock Calculator** | Calculate buffer stock and reorder point from demand variability | [`tools/safety-stock-calculator.html`](tools/safety-stock-calculator.html) |
-| **Reorder Point Calculator** | Know exactly when to place your next order | [`tools/reorder-point-calculator.html`](tools/reorder-point-calculator.html) |
-| **ABC Analysis Tool** | Classify products into A/B/C tiers with charts | [`tools/abc-analysis.html`](tools/abc-analysis.html) |
+| **EOQ Calculator** | Find the optimal order quantity that minimises total cost | [Open EOQ Calculator](https://rahees-16.github.io/inventory-management-and-asset-tracking/tools/eoq-calculator.html) |
+| **Safety Stock Calculator** | Calculate buffer stock and reorder point from demand variability | [Open Safety Stock Calculator](https://rahees-16.github.io/inventory-management-and-asset-tracking/tools/safety-stock-calculator.html) |
+| **Reorder Point Calculator** | Know exactly when to place your next order | [Open Reorder Point Calculator](https://rahees-16.github.io/inventory-management-and-asset-tracking/tools/reorder-point-calculator.html) |
+| **ABC Analysis Tool** | Classify products into A/B/C tiers with charts | [Open ABC Analysis Tool](https://rahees-16.github.io/inventory-management-and-asset-tracking/tools/abc-analysis.html) |
 
 Each tool is a single self-contained HTML file — open it in any browser. Uses ₹ (Indian Rupee) formatting and works on mobile.
 
