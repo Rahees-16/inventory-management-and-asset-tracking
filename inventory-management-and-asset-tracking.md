@@ -260,6 +260,8 @@ An SKU (pronounced "skew") is a unique code you create for each product you sell
 
 **The golden rule:** If two items are different in ANY way that matters to your business, they need different SKUs.
 
+> **Nadia's world:** Her Biryani Masala in a 100g jar and Biryani Masala in a 250g jar are *different* SKUs — even though it's the same blend. Different size = different SKU. She starts with 15 SKUs and thinks that's a lot — until she realises adding a single new size doubles her SKU count.
+
 **Example — T-shirts:**
 ```
 TS-BLK-S     T-shirt, Black, Small
@@ -308,6 +310,8 @@ FURN-CHR-BLK-003      Furniture > Chair > Black > Item 3
 
 A barcode is just a visual way to encode a number so that machines can read it instantly. Instead of a human typing "074182765108" into a computer, a scanner reads the barcode in milliseconds.
 
+> **Nadia's world:** At market scale, she hand-writes SKUs on labels. But once she starts getting 5-10 online orders a day, typing "SP-BIR-REG-100" for every jar is slow and error-prone. A ₹2,500 barcode scanner changes everything — scan, beep, done.
+
 **How the barcode on every store product works (UPC):**
 
 Every product in a store has a Universal Product Code — that's the barcode you see on everything from cereal to shampoo.
@@ -345,6 +349,8 @@ All of that happens in a fraction of a second.
 *RFID tags come in many forms — from paper-thin stickers (passive) to battery-powered devices (active). (Image: Wikimedia Commons, CC BY-SA 3.0)*
 
 Barcodes have a limitation — you need to point a scanner directly at them, one at a time. RFID (Radio-Frequency Identification) uses radio waves instead, which means:
+
+> **Nadia's world:** RFID is overkill for her 60-product spice business — at ₹4-40 per tag plus a ₹40,000+ reader, it doesn't make sense yet. She'll stick with barcodes until she's managing thousands of SKUs or needs to count an entire warehouse in minutes.
 
 - You don't need line-of-sight
 - You can read hundreds of tags per second
@@ -461,6 +467,8 @@ The answer depends on which **valuation method** you choose. Different methods g
 
 **The idea in plain English:** The stuff you bought first is the stuff you sell first. Like a line at a grocery store — first in line, first served.
 
+> **Nadia's world:** She naturally uses FIFO — when she makes a new batch of Biryani Masala, the older jars go to the front of the shelf. Customers get the oldest jars first, keeping everything fresh. Her accountant later confirms: FIFO is also the right method for her tax filings.
+
 **Think of it like a shelf of milk:** The oldest milk is at the front, and customers grab it first. The newest milk sits at the back.
 
 **Using our bookshop example (selling 150 copies):**
@@ -564,6 +572,8 @@ Batch B: Received February 1, Expires September 2025
 
 Under FIFO, you'd sell Batch A first (arrived first). Under FEFO, you'd sell Batch B first (expires sooner). FEFO prevents waste and is often legally required for food and medicine.
 
+> **Nadia's world:** Her spices don't have strict expiry dates, but they *do* go stale. She treats freshness like expiry — the oldest batch of Chai Masala always gets sold first, even if a newer batch arrived earlier. That's FEFO in spirit.
+
 ### Nadia's Story: Chapter 3
 
 Nadia uses FIFO naturally — she sells the oldest jars first so spices stay fresh. Her accountant explains that FIFO also makes the most sense for her taxes since spice prices have been relatively stable.
@@ -585,6 +595,8 @@ An Italian economist named Vilfredo Pareto noticed in 1896 that 80% of Italy's l
 - ~20% of your inventory items probably represent ~80% of your total inventory value
 
 This means a small number of products deserve most of your attention.
+
+> **Nadia's world:** Out of her 15 blends, just 3 (Biryani Masala, Garam Masala, Chai Masala) bring in 72% of her revenue. Those are her "vital few." The remaining 12 blends are the "trivial many" — important but not worth obsessing over.
 
 ### 4.2 ABC Classification
 
@@ -670,6 +682,8 @@ Keychains             ₹32,000     0.2%       100.0%           C
 ### 4.4 When Revenue Isn't the Whole Story
 
 Sometimes a cheap item is more important than an expensive one.
+
+> **Nadia's world:** Her glass jars cost only ₹12 each — a C-class item by value. But if she runs out of jars, she can't sell *any* product. Jars are cheap but critical. She learned this the hard way when her jar supplier had a delay and she couldn't fulfil 3 days of orders.
 
 **Imagine this:** A ₹20 rubber O-ring is a C-class item by revenue. But if you run out of them, your ₹50 crore production line shuts down completely.
 
@@ -760,6 +774,8 @@ flowchart TD
 Demand is influenced by lots of things, some you can anticipate and some you can't:
 
 - **Seasons:** Winter coats sell in fall. Ice cream sells in summer. Tax software sells in January.
+
+> **Nadia's world:** Her Biryani Masala spikes 3x before Eid and Diwali. Chai Masala sells steadily year-round. Her seasonal holiday gift boxes only sell in November-December. Three products, three completely different demand patterns.
 - **Trends:** Is your product category growing or shrinking over time?
 - **Promotions:** A 30% off sale will spike demand — but by how much?
 - **Economy:** In a recession, people buy less. Luxury goods get hit first.
@@ -774,6 +790,8 @@ Demand is influenced by lots of things, some you can anticipate and some you can
 #### Just Ask People (Qualitative Methods)
 
 When you don't have much historical data — like when launching a new product — you rely on human judgment:
+
+> **Nadia's world:** When she launched her Tandoori Rub (a new product), she had zero sales data. So she asked her regular market customers: "Would you buy this? How often?" Five people said yes. She made 30 jars. Sold 22 in the first month. Not perfect, but good enough to start.
 
 **Ask your sales team:** "How much do you think we'll sell next quarter?" Salespeople know their customers. But they tend to be either too optimistic ("We'll crush it!") or too pessimistic (to set low targets they can easily beat).
 
@@ -790,6 +808,8 @@ When you have sales history, you can use math to spot patterns. Here are the mai
 **Moving Average — "What did we sell recently?"**
 
 The idea: average your sales over the last few months. This smooths out random ups and downs and gives you a reasonable guess for next month.
+
+> **Nadia's world:** Her Garam Masala sold 40, 38, and 44 jars in the last 3 months. Moving average forecast for next month: (40 + 38 + 44) / 3 = 41 jars. Simple, and usually close enough.
 
 **Plain English example:** A coffee shop tracks monthly cup sales:
 ```
@@ -1024,6 +1044,8 @@ But if you order a LOT at once to avoid frequent ordering, you'll have piles of 
 
 **EOQ finds the sweet spot** — the order quantity where the combined cost of ordering and holding is as low as possible.
 
+> **Nadia's world:** Every time she orders cumin from Crawford Market, she spends ₹300 on an auto-rickshaw plus 2 hours of her time (worth ₹200) — that's ₹500 per order. But if she buys 20 kg at once, half of it sits in her godown for weeks, taking up space and risking going stale. EOQ helps her find the right amount to order each time.
+
 ```
   EOQ — THE SWEET SPOT
 
@@ -1104,6 +1126,8 @@ EOQ gives you a starting point, but real life has complications:
 
 If formulas aren't your thing, the Min/Max system is a simpler approach that works well for most small businesses:
 
+> **Nadia's world:** This is exactly what Nadia uses. For every product in her spreadsheet, she sets a Min ("order when I hit this") and a Max ("order enough to get back to this"). She checks it every morning with her chai. Takes 5 minutes. No formulas needed.
+
 ```
 Set a Minimum level: "When I hit this number, I order more"
 Set a Maximum level: "I order enough to get back to this number"
@@ -1152,6 +1176,8 @@ Your inventory system says you have 50 widgets. You go to the shelf and count...
 
 No matter how careful you are, real inventory and recorded inventory will drift apart over time. Counting is how you catch and fix the drift.
 
+> **Nadia's world:** After 6 months of tracking in her spreadsheet, she does her first real count. Her sheet says 45 jars of BBQ rub — she actually has 41. Four went out as free samples at the market that she forgot to record. Small thing, but multiply that across 15 products and the errors add up fast.
+
 ### 7.1 Full Physical Count: "Count Everything at Once"
 
 Exactly what it sounds like: shut everything down, send in teams, count every single item in the building.
@@ -1171,6 +1197,8 @@ Exactly what it sounds like: shut everything down, send in teams, count every si
 ### 7.2 Cycle Counting: "Count a Little Bit Every Day"
 
 Instead of one big painful count, count a small portion of your inventory every single day. Over the course of a few months, you'll have counted everything — and you never need to shut down.
+
+> **Nadia's world:** With 60 SKUs, a full count takes her an hour. Instead, she counts 5 products every morning (15 minutes). Her A-items (Biryani, Garam, Chai Masala) get counted weekly. Her C-items (seasonal gift boxes) get counted once a month. She catches errors early and never needs to shut down for a "big count day."
 
 **How to decide what to count each day (using ABC):**
 
@@ -1270,6 +1298,8 @@ A warehouse is not just a big room where you pile stuff. A well-organized wareho
 
 Goods flow through a warehouse like water through a river:
 
+> **Nadia's world:** Even her 500 sq ft godown follows this flow. Raw spices come in through the back door (receiving), sit on ingredient shelves (storage), get picked when she's making a batch or filling orders (pick), get packed in kraft boxes (packing), and go out the front for courier pickup (shipping). Same logic, smaller scale.
+
 ```
 RECEIVING DOCK  →  STORAGE  →  PICK AREA  →  PACKING  →  SHIPPING DOCK
 (goods come in)  (goods wait)  (grab items)  (box them)  (goods go out)
@@ -1328,6 +1358,8 @@ flowchart LR
 
 Just like every house has a street address, every shelf position in a warehouse has a location code:
 
+> **Nadia's world:** Her version is simpler — masking tape labels: "SHELF-A1", "SHELF-A2", "SHELF-B1". But the principle is identical. When she hires a helper, she can say "Chole Masala is on SHELF-B2" and they find it instantly instead of searching every shelf.
+
 ```
 A-05-03-B-02
 
@@ -1343,6 +1375,8 @@ B    = Level B (second shelf from the floor)
 ### 8.3 Slotting: Put the Right Products in the Right Place
 
 "Slotting" means deciding where each product lives in the warehouse. Good slotting can boost productivity by 20-30% with zero new equipment.
+
+> **Nadia's world:** She puts her top 3 sellers (Biryani Masala, Garam Masala, Chai Masala) on the shelf closest to her packing table at eye level — the "golden zone." Her slow-moving seasonal blends go on the top shelf in the back. This one change saves her 10+ minutes of walking per day.
 
 **The core principles:**
 
@@ -1398,6 +1432,8 @@ She labels every shelf position with masking tape: "SHELF-A1", "SHELF-A2", etc. 
 
 When a shipment arrives from a supplier, you don't just throw it on a shelf. There's a process:
 
+> **Nadia's world:** When her 10 kg bag of cumin arrives from Crawford Market, she weighs it (is it really 10 kg?), checks quality (does it smell fresh? any moisture?), records it in her spreadsheet, and puts it on SHELF-A1. She learned to always check after one supplier sent 8 kg in a "10 kg" bag.
+
 1. **Check the delivery against your purchase order.** Did you order 500 widgets? Count them. Is it actually 500? Are they the right model?
 2. **Inspect quality.** Are any damaged? Do they look right?
 3. **Record it in your system.** Scan the items, update quantities.
@@ -1435,6 +1471,8 @@ The computer always knows where everything is. The human just needs to follow th
 ### 9.3 Picking: Grabbing Items for Orders
 
 Picking — pulling items off shelves to fill customer orders — is the most expensive part of warehouse work, using **50-65% of all warehouse labor.** Most of that cost is walking.
+
+> **Nadia's world:** With 5-10 orders a day, she uses single order picking — she walks to the shelf, grabs jars for one order, packs it, then does the next. Simple. But at 50+ orders a day, she'd switch to batch picking: grab jars for 10 orders in one trip, then sort them at the packing table. Same jars, way less walking.
 
 ```
   PICKING METHODS COMPARED
@@ -1521,6 +1559,8 @@ We covered inventory (things you sell or use up) in previous chapters. Now let's
 
 Think of inventory like groceries (you buy them and they're gone in days). Assets are like your refrigerator (you buy it once and use it for 10 years).
 
+> **Nadia's world:** Her jars of Biryani Masala = inventory (she sells them in days). Her commercial spice grinder = asset (she'll use it for 5+ years). Her thermal label printer = asset. Her delivery van = asset. Same business, two completely different tracking systems.
+
 ### 10.1 The Life of an Asset
 
 Every asset goes through the same journey:
@@ -1588,6 +1628,8 @@ Before buying anything expensive, smart businesses ask:
 
 Most people only think about the purchase price. But that's just the beginning.
 
+> **Nadia's world:** Her ₹45,000 spice grinder looks affordable. But add electricity (₹200/month), cleaning supplies, one repair in year 2 (₹5,000), and a replacement motor in year 4 (₹8,000) — the real 5-year cost is closer to ₹70,000. Knowing the TCO upfront helps her price her products correctly.
+
 **Example — a company buying laptops for 10 employees:**
 ```
 Purchase price (10 laptops × ₹70,000):     ₹7,00,000
@@ -1650,6 +1692,8 @@ By location:          MUM-FL3-001, DEL-FL1-001, BLR-FL2-001
 
 There are four approaches to maintenance. Think of them in terms of how you treat your car:
 
+> **Nadia's world:** She cleans her spice grinder after every use and oils the motor monthly — that's preventive maintenance. Her label printer? She uses it until it jams, then fixes it — that's reactive. The grinder is critical (can't make product without it), so it gets preventive care. The printer is cheap to fix, so reactive is fine.
+
 **1. Reactive — "Fix it when it breaks"**
 You drive your car until it stops working, then take it to the mechanic.
 - Cheap in the short term
@@ -1680,6 +1724,8 @@ Jio operates 350,000+ telecom towers across India. They use IoT sensors to monit
 ### 10.5 Depreciation: How Assets Lose Value on Paper
 
 When you buy a machine for ₹10 lakh, its value doesn't disappear from your books in one shot. Instead, you spread the cost across its useful life. This is called depreciation.
+
+> **Nadia's world:** Her CA explains: "You can't deduct the full ₹45,000 grinder cost from this year's taxes. Instead, you'll claim ₹9,000 per year for 5 years." That's straight-line depreciation — and it reduces her tax bill every year the grinder is in use.
 
 **Why does this matter?**
 - It affects how much tax you pay (depreciation reduces your taxable profit)
@@ -1805,6 +1851,8 @@ Using straight-line: ₹45,000 ÷ 5 = ₹9,000 per year in depreciation. She als
 ## Chapter 11: A Day in the Life — How Different People Use Inventory Systems
 
 Theory is great, but what does inventory management actually look like in daily work? Let's follow real roles through their day.
+
+> **Nadia's world:** We saw Nadia's daily routine in Chapter 9 — checking orders, picking jars, scanning barcodes, packing boxes. Now let's see what that same work looks like at enterprise scale: a Flipkart warehouse processing thousands of orders, a kirana store juggling expiry dates, and an IT team managing 2,000 laptops.
 
 ### 11.1 Day in the Life: Warehouse Worker at Flipkart
 
@@ -2116,6 +2164,8 @@ In Indian e-commerce, return rates are 25-40% for fashion items. A pile of retur
 
 When you sell online — whether on Amazon, Flipkart, Meesho, or your own website (using Shopify, WooCommerce, etc.) — inventory management gets more complex because:
 
+> **Nadia's world:** She now sells on Amazon India, her Shopify website, and at 8 local stores. If her Shopify site shows 10 jars of Biryani Masala available, and Amazon also shows 10 — but she only HAS 10 — she could end up with 20 orders and only 10 jars. This is exactly the multi-channel nightmare we're about to cover.
+
 - **Multiple sales channels:** You might sell on Amazon + Flipkart + your own website. Each channel shows customers what's "available." If you have 10 units and all three channels show 10, you might get 30 orders for 10 units.
 - **Returns are high:** E-commerce returns in India are 15-40% depending on category (highest in fashion).
 - **Speed matters:** Customers expect 1-2 day delivery in cities. You need inventory positioned close to them.
@@ -2184,6 +2234,8 @@ Customer orders on your website
 **Best for:** Small sellers, handmade/custom products, low volume (under 20 orders/day)
 **Example:** A home baker in Jaipur selling cakes on Instagram and WhatsApp
 
+> **Nadia's world:** This is how she started — packing orders from her godown, printing Shiprocket labels, handing packages to the Delhivery pickup guy. Full control, but she does everything herself.
+
 #### Model 2: Marketplace Fulfillment (FBA / Flipkart Assured)
 You send your inventory to Amazon's or Flipkart's warehouse. They handle storage, picking, packing, and shipping.
 
@@ -2205,6 +2257,8 @@ Referral fee: 5-20% of selling price (depends on category)
 **Best for:** Medium sellers who want fast delivery badges ("Prime" or "Assured") without running their own warehouse
 
 **The trap:** If your products don't sell quickly, storage fees eat into your profits. Amazon charges EXTRA for items sitting longer than 6 months ("long-term storage fees"). Many Indian sellers have lost money by sending too much inventory to FBA.
+
+> **Nadia's world:** She sends her top 5 products to Amazon FBA — they sell fast enough that storage fees are worth it for the "Prime" badge. But she keeps her slow-moving seasonal blends in her own godown. Lesson: use FBA for fast sellers, self-fulfil the rest.
 
 #### Model 3: 3PL Fulfillment
 You send inventory to a third-party warehouse (Delhivery, ShipRocket, Pickrr, etc.). They handle storage and shipping across multiple channels.
@@ -2258,6 +2312,8 @@ Customer orders on your website
 
 The biggest headache for online sellers: keeping inventory consistent across channels.
 
+> **Nadia's world:** She got burned by this exact problem. A customer ordered 5 jars of Chai Masala on Amazon and another customer ordered 4 on Shopify — at the same time. She only had 6 jars. One order got cancelled, the customer left a 1-star review. That's when she signed up for Unicommerce to sync all channels from one central stock count.
+
 **The nightmare scenario:**
 ```
 You have 5 units of a product.
@@ -2284,6 +2340,8 @@ Website sells 1 → Central: 2 → All channels update to 2
 ### 14.4 Cash on Delivery (COD) — India's Unique Challenge
 
 India has an unusually high COD rate (50-70% of e-commerce orders in many categories). This creates unique inventory challenges:
+
+> **Nadia's world:** About 55% of her online orders are COD. Last month, 8 COD customers refused delivery — she paid shipping both ways (₹120 × 2 × 8 = ₹1,920) and got the jars back. She now offers a ₹20 discount for prepaid orders ("Pay online, save ₹20!") and her COD rate dropped to 40%.
 
 - **Higher return rates:** COD orders have 2-3x higher return/rejection rates than prepaid
 - **Cash flow delays:** You ship the product but don't get paid for 7-15 days (until the delivery partner remits the cash)
@@ -2321,6 +2379,8 @@ Now she only sends proven, fast-selling products to FBA and keeps experimental p
 
 Traditional forecasting uses historical patterns (last year's sales, seasonal trends). AI/Machine Learning goes further — it can analyze hundreds of factors simultaneously:
 
+> **Nadia's world:** Remember her 3-month moving average from Chapter 5? AI could look at her sales data *plus* weather (hot days = more BBQ Rub sales), *plus* festival calendars (Eid = Biryani Masala spike), *plus* her Instagram post engagement — all at once. She's not there yet, but tools like Zoho and ERPNext are starting to add basic ML forecasting that even small businesses can use.
+
 - Past sales data
 - Weather forecasts (ice cream sales spike when temperature crosses 35°C)
 - Social media trends (a product going viral on Instagram)
@@ -2352,6 +2412,8 @@ They pre-position inventory so that when you order a phone during the sale, it's
 
 **Automated Guided Vehicles (AGVs) — Robots that move goods:**
 Instead of humans walking to shelves, the shelves come to the humans.
+
+> **Nadia's world:** Robots aren't in her future yet — but the principle applies at every scale. Her ₹2,500 barcode scanner *is* automation. Her Shiprocket rate-shopping *is* AI picking the cheapest courier. Even her Google Sheet formula that flags "ORDER!" when stock hits minimum *is* a simple automated alert. Automation is a spectrum, not an on/off switch.
 
 **Real-life example — Flipkart's robot warehouses:**
 At select Flipkart fulfilment centres, robots carry entire shelving units to human pickers. The picker stands in one spot, and robots bring products to them. This eliminates all walking time and increases picking productivity by 3-5x.
@@ -2431,6 +2493,8 @@ She looks at a Flipkart news article about warehouse robots and smiles — "Mayb
 
 **Do a full count.** Yes, count everything. This is your baseline.
 
+> **Nadia's world (Month 0):** She sat on the floor of her spare room and counted every jar, every bag of raw spice, every lid and label. It took 2 hours. She found 3 jars of Chai Masala she'd forgotten about behind a box. That count became the starting point of her entire system.
+
 ### Phase 2: Set Up a Basic System (Week 3-4)
 
 **Choose your tool based on your size:**
@@ -2472,6 +2536,8 @@ She looks at a Flipkart news article about warehouse robots and smiles — "Mayb
 
 This is the HARDEST part. Most businesses have messy data.
 
+> **Nadia's world (Month 3-6):** She found that her spreadsheet had "Biryani Masala", "biryani masala", and "Biryani masala 100g" as three separate rows — all the same product. She spent a full Saturday cleaning up names, standardizing SKUs, and merging duplicate entries. Painful, but she only had to do it once.
+
 **Common problems:**
 - Same product has 3 different names ("Tata Salt 1kg", "tata salt 1 kg", "TATA SALT 1KG")
 - No consistent SKU system
@@ -2498,6 +2564,8 @@ Write down how things should work:
 
 Even if it's just you right now, write it down. When you hire your first helper, you'll hand them this document.
 
+> **Nadia's world (Month 12):** When she hired her first helper, she realised the process was all in her head. She spent an evening writing a simple 1-page "How We Do Things" document: how to check incoming spice deliveries, where each product goes, how to scan jars when packing orders. Her helper was productive on day one instead of asking questions all day.
+
 ### Phase 5: Go Live (Week 13-14)
 
 - Do a final full count
@@ -2521,20 +2589,28 @@ Even if it's just you right now, write it down. When you hire your first helper,
 ### Mistake 1: "We'll get software and it will fix everything"
 Software is a tool, not a solution. A ₹5 lakh ERP used by untrained staff with bad processes produces zero value. Fix your processes first, THEN get software.
 
+> **Nadia's lesson:** She started with a notebook, then Google Sheets, then Zoho Inventory. Each upgrade happened because she'd outgrown the previous tool — not because she thought software would "fix" her problems. Her processes were already solid before she ever paid for software.
+
 ### Mistake 2: Not counting regularly
 "We'll count at year-end" means 364 days of growing errors. Count a little every day (cycle counting) instead.
 
 ### Mistake 3: Ignoring the cost of holding inventory
 "We got a great deal on 10,000 units!" But did you think about the ₹2 lakh/year it costs to store them? And the risk that they won't sell?
 
+> **Nadia's lesson:** She once bought 50 kg of Kashmiri saffron because the price was amazing. Half of it sat in storage for 8 months, the price dropped, and she had to write it down at a loss. Bulk deals aren't deals if the holding cost eats the savings.
+
 ### Mistake 4: Treating all items the same
 Don't spend 30 minutes analyzing reorder points for ₹50 items. Use ABC classification — focus your energy where it makes the most money.
+
+> **Nadia's lesson:** She used to check every product equally every morning. Then she ran ABC analysis and realised her top 3 blends deserve daily attention, while her seasonal gift boxes need a glance once a month. Same time investment, 10x better results.
 
 ### Mistake 5: Not training your people
 Your ₹5 lakh software is worthless if the warehouse boy doesn't scan items properly. Budget for training. Budget again for re-training.
 
 ### Mistake 6: Waiting for perfect data to start
 Don't spend 6 months making data perfect before going live. Start with 80% accuracy and improve from there. 80% accurate data is infinitely better than no data.
+
+> **Nadia's lesson:** Her first count showed 85% accuracy. Not great. But having an 85%-accurate spreadsheet was infinitely better than the notebook she was using before, where she had *zero* idea what was in stock. She improved to 97% over 18 months — by starting imperfect and fixing as she went.
 
 ### Mistake 7: Not investigating discrepancies
 When the count doesn't match, don't just change the number and move on. Ask WHY. The same error will keep happening until you fix the root cause.
