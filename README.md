@@ -30,7 +30,7 @@ A comprehensive A-Z textbook on inventory management and asset tracking — from
 ### Part VI: E-Commerce & Modern Models
 - **Chapter 14** — E-commerce inventory in India: self-fulfillment, FBA, 3PL, dropshipping, multi-channel sync, COD/RTO challenges
 
-### Part VII: Modern Technology & the Future
+### Part VII: Modern Technology & the Future → [Separate doc](modern-technology-and-the-future.md)
 - **Chapter 15** — AI-powered forecasting, warehouse robots, IoT sensors, blockchain traceability, digital twins
 
 ### Part VIII: Putting It All Together
@@ -93,3 +93,11 @@ The textbook includes a hands-on appendix covering:
 - **ERPNext** — step-by-step: create items, set reorder points, receive stock, process sales orders, check stock reports
 - **Tally Prime** — enable inventory, create stock items, record purchases/sales, check stock summaries
 - **Google Sheets** — inventory tracker template with formulas for reorder alerts, days-of-stock, and turnover
+
+## Additional Guides
+
+| Document | What it covers |
+|----------|---------------|
+| [Common Issues in Inventory, WMS & Asset Tracking](common-issues-inventory-wms-asset-tracking.md) | 23 real-world problems across inventory management, warehouse operations, and asset tracking — with Nadia examples and a quick-reference summary table |
+| [How IoTReady Solves These Issues](how-iotready-solves-these-issues.md) | Maps each of the 23 issues to how [IoTReady's](https://iotready.com/) Operations Traceability Platform addresses them — with customer examples (BigBasket, Vedanta, Flipkart) and before/after metrics |
+| [Modern Technology & the Future](modern-technology-and-the-future.md) | Chapter 15 from the main textbook — AI forecasting, warehouse robots, IoT sensors, blockchain traceability, digital twins |
