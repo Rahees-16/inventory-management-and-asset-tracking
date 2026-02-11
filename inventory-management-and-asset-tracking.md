@@ -74,6 +74,31 @@ There are five main types. Think of them as stages in a journey from raw materia
                              └──────────────┘
 ```
 
+> **Visual diagram** (renders on GitHub):
+
+```mermaid
+flowchart LR
+    RM["**Raw Materials**\nHaldi, jeera, dhania..."]
+    WIP["**Work in Progress**\nMasala being mixed & jarred"]
+    FG["**Finished Goods**\nSealed jars with labels"]
+    CUST["**Customer**\nHappy customer!"]
+    PKG["**Packaging**\nJars, lids, labels, bags"]
+    MRO["**MRO**\nScale, towels, cleaning"]
+
+    RM -->|transform| WIP -->|complete| FG -->|sell| CUST
+    PKG -.->|supports| WIP
+    PKG -.->|supports| FG
+    MRO -.->|supports| RM
+    MRO -.->|supports| FG
+
+    style RM fill:#fed7d7,stroke:#e53e3e,color:#000
+    style WIP fill:#fefcbf,stroke:#d69e2e,color:#000
+    style FG fill:#c6f6d5,stroke:#38a169,color:#000
+    style CUST fill:#bee3f8,stroke:#3182ce,color:#000
+    style PKG fill:#e9d8fd,stroke:#805ad5,color:#000
+    style MRO fill:#feebc8,stroke:#dd6b20,color:#000
+```
+
 #### Raw Materials
 The basic ingredients you start with — things you buy to turn into something else.
 
@@ -278,6 +303,9 @@ FURN-CHR-BLK-003      Furniture > Chair > Black > Item 3
 
 ### 2.3 Barcodes: How Machines Read SKUs
 
+![Different types of barcodes — UPC linear barcode, QR code, and Data Matrix](https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/EAN13.svg/440px-EAN13.svg.png)
+*An EAN-13 barcode — the type you see on every product in a store. The lines encode a 13-digit number. (Image: Wikimedia Commons, Public Domain)*
+
 A barcode is just a visual way to encode a number so that machines can read it instantly. Instead of a human typing "074182765108" into a computer, a scanner reads the barcode in milliseconds.
 
 **How the barcode on every store product works (UPC):**
@@ -312,6 +340,9 @@ All of that happens in a fraction of a second.
 | Data Matrix | Tiny square pattern | Small parts, electronics, medicine |
 
 ### 2.4 RFID: Tracking Without Scanning Line-of-Sight
+
+![RFID tags of various types — passive sticker tags and active tags with batteries](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/RFID_Chip_008.jpg/1280px-RFID_Chip_008.jpg)
+*RFID tags come in many forms — from paper-thin stickers (passive) to battery-powered devices (active). (Image: Wikimedia Commons, CC BY-SA 3.0)*
 
 Barcodes have a limitation — you need to point a scanner directly at them, one at a time. RFID (Radio-Frequency Identification) uses radio waves instead, which means:
 
@@ -451,6 +482,28 @@ What's left on the shelf:
 **When prices are going up, FIFO reports the highest profit** — because you're counting the cheapest (oldest) items as sold, making your costs look low.
 
 **Real-life example:** Grocery stores naturally work on FIFO — older milk goes to the front, newer milk to the back.
+
+> **FIFO vs LIFO visual** (renders on GitHub):
+
+```mermaid
+flowchart LR
+    subgraph FIFO["FIFO — First In, First Out"]
+        direction LR
+        F1["Jan batch\n₹300 each\n**SOLD FIRST**"] --> F2["Mar batch\n₹350 each"] --> F3["Jun batch\n₹400 each"]
+    end
+
+    subgraph LIFO["LIFO — Last In, First Out"]
+        direction LR
+        L1["Jan batch\n₹300 each"] --> L2["Mar batch\n₹350 each"] --> L3["Jun batch\n₹400 each\n**SOLD FIRST**"]
+    end
+
+    style F1 fill:#fed7d7,stroke:#e53e3e,color:#000
+    style F2 fill:#fefcbf,stroke:#d69e2e,color:#000
+    style F3 fill:#c6f6d5,stroke:#38a169,color:#000
+    style L1 fill:#c6f6d5,stroke:#38a169,color:#000
+    style L2 fill:#fefcbf,stroke:#d69e2e,color:#000
+    style L3 fill:#fed7d7,stroke:#e53e3e,color:#000
+```
 
 ### 3.3 LIFO (Last-In, First-Out)
 
@@ -672,6 +725,34 @@ Of course, you can't see the future. So you forecast — which is a fancy way of
    └──────────▶ Time            └──────────────▶ Time
    "No pattern, just noise"     "Viral on Instagram!" or
                                 "Pandemic panic buying"
+```
+
+> **Forecasting decision tree** (renders on GitHub):
+
+```mermaid
+flowchart TD
+    START["Do you have historical\nsales data?"]
+    START -->|No| QUAL["**Qualitative Methods**"]
+    START -->|Yes| DATAQ["Is there a clear\nseasonal pattern?"]
+
+    QUAL --> SALES["Ask sales team"]
+    QUAL --> CUST["Survey customers"]
+    QUAL --> DELPHI["Delphi method\n(expert panel)"]
+
+    DATAQ -->|Yes| SEASONAL["**Seasonal Decomposition**\nBreak into trend + season + noise"]
+    DATAQ -->|No| STABLE["Is demand fairly\nstable over time?"]
+
+    STABLE -->|Yes| MA["**Moving Average**\nAverage recent months"]
+    STABLE -->|No, it reacts to changes| ES["**Exponential Smoothing**\nWeight recent data more heavily"]
+
+    style START fill:#bee3f8,stroke:#3182ce,color:#000
+    style QUAL fill:#fefcbf,stroke:#d69e2e,color:#000
+    style SEASONAL fill:#c6f6d5,stroke:#38a169,color:#000
+    style MA fill:#c6f6d5,stroke:#38a169,color:#000
+    style ES fill:#c6f6d5,stroke:#38a169,color:#000
+    style SALES fill:#feebc8,stroke:#dd6b20,color:#000
+    style CUST fill:#feebc8,stroke:#dd6b20,color:#000
+    style DELPHI fill:#feebc8,stroke:#dd6b20,color:#000
 ```
 
 ### 5.1 What Makes Demand Hard to Predict
@@ -1182,6 +1263,9 @@ Her accuracy: about 85%. Not great, but now she knows. She fixes the numbers and
 
 A warehouse is not just a big room where you pile stuff. A well-organized warehouse is designed like a factory — everything has a purpose and a place, and the flow of goods is planned to minimize wasted movement.
 
+![Warehouse interior with tall pallet racking and forklifts — this is what a typical mid-size warehouse looks like](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Eagle_Warehouse_Putaway.jpg/1280px-Eagle_Warehouse_Putaway.jpg)
+*A real warehouse with pallet racking. Notice the aisle layout, height levels, and forklift access. (Image: Wikimedia Commons, CC BY-SA 4.0)*
+
 ### 8.1 The Flow of Goods Through a Warehouse
 
 Goods flow through a warehouse like water through a river:
@@ -1220,6 +1304,25 @@ The best layouts keep this flow moving forward without backtracking.
 ```
 
 **Key idea:** Receiving at one end, shipping at the other. Goods flow through the building and never go backwards.
+
+> **Warehouse goods flow** (renders on GitHub):
+
+```mermaid
+flowchart LR
+    REC["**Receiving Dock**\nGoods come in\nCheck against PO\nInspect quality"]
+    STORE["**Storage**\nBulk / Reserve\nPick zone\nOverflow"]
+    PICK["**Pick Area**\nGrab items\nfor orders"]
+    PACK["**Packing**\nBox, label,\nweigh, seal"]
+    SHIP["**Shipping Dock**\nStage & load\nonto trucks"]
+
+    REC ==>|putaway| STORE ==>|pick list| PICK ==>|move to| PACK ==>|dispatch| SHIP
+
+    style REC fill:#bee3f8,stroke:#3182ce,color:#000
+    style STORE fill:#e9d8fd,stroke:#805ad5,color:#000
+    style PICK fill:#fefcbf,stroke:#d69e2e,color:#000
+    style PACK fill:#feebc8,stroke:#dd6b20,color:#000
+    style SHIP fill:#c6f6d5,stroke:#38a169,color:#000
+```
 
 ### 8.2 Every Spot Has an Address
 
@@ -1265,6 +1368,9 @@ Different products need different types of shelving:
 **Regular shelving:** Just shelves. Perfect for small items picked by hand — books, small electronics, cosmetics.
 
 **Pallet racking:** Tall metal frames that hold pallets. Forklifts place and retrieve pallets. Most common in warehouses.
+
+![Forklift operating in a warehouse aisle between tall pallet racks](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Forklift_truck_in_warehouse.jpg/1280px-Forklift_truck_in_warehouse.jpg)
+*A forklift placing a pallet on racking. Drivers need certification and follow strict safety rules. (Image: Wikimedia Commons, CC BY-SA 4.0)*
 
 **Drive-in racking:** Forklifts drive INTO the rack to place pallets deep inside. Very space-efficient, but you can only access the front pallet (last in, first out).
 
@@ -1447,6 +1553,29 @@ Every asset goes through the same journey:
 ```
 
 Let's walk through each stage.
+
+> **Asset lifecycle diagram** (renders on GitHub):
+
+```mermaid
+flowchart LR
+    PLAN["1. **PLAN**\nDo we need this?\nTCO analysis"]
+    BUY["2. **BUY**\nPurchase order\nVendor, price"]
+    TAG["3. **TAG & REGISTER**\nAsset ID, serial #\nPhoto, warranty"]
+    DEPLOY["4. **DEPLOY**\nAssign to user\nSet location"]
+    MAINTAIN["5. **USE & MAINTAIN**\nRepairs, service\nWork orders"]
+    DEPREC["6. **DEPRECIATE**\nValue decreases\non books each year"]
+    DISPOSE["7. **RETIRE / DISPOSE**\nSell, scrap\nDonate, recycle"]
+
+    PLAN --> BUY --> TAG --> DEPLOY --> MAINTAIN --> DEPREC --> DISPOSE
+
+    style PLAN fill:#bee3f8,stroke:#3182ce,color:#000
+    style BUY fill:#c6f6d5,stroke:#38a169,color:#000
+    style TAG fill:#fefcbf,stroke:#d69e2e,color:#000
+    style DEPLOY fill:#feebc8,stroke:#dd6b20,color:#000
+    style MAINTAIN fill:#fed7d7,stroke:#e53e3e,color:#000
+    style DEPREC fill:#e9d8fd,stroke:#805ad5,color:#000
+    style DISPOSE fill:#e2e8f0,stroke:#718096,color:#000
+```
 
 ### 10.2 Planning: Do We Really Need This?
 
@@ -2016,6 +2145,32 @@ When you sell online — whether on Amazon, Flipkart, Meesho, or your own websit
   └─────────────────────────────────────────────────────────────────┘
 ```
 
+> **E-commerce fulfillment models** (renders on GitHub):
+
+```mermaid
+flowchart TD
+    subgraph M1["Model 1: Self-Fulfillment"]
+        YOU1["You"] --> GODOWN["Your godown"] --> CUST1["Customer"]
+    end
+
+    subgraph M2["Model 2: Marketplace (FBA)"]
+        YOU2["You"] --> AMZN["Amazon/Flipkart\nwarehouse"] --> CUST2["Customer"]
+    end
+
+    subgraph M3["Model 3: 3PL"]
+        YOU3["You"] --> TPL["Delhivery/\nShipRocket"] --> CUST3["Customer"]
+    end
+
+    subgraph M4["Model 4: Dropshipping"]
+        YOU4["You\n(no stock)"] -.->|forward order| SUPP["Supplier"] --> CUST4["Customer"]
+    end
+
+    style M1 fill:#ebf8ff,stroke:#3182ce
+    style M2 fill:#f0fff4,stroke:#38a169
+    style M3 fill:#fffbeb,stroke:#d69e2e
+    style M4 fill:#fff5f5,stroke:#e53e3e
+```
+
 #### Model 1: Self-Fulfillment (You Keep and Ship Everything)
 You keep products in your own space and ship orders yourself.
 
@@ -2189,6 +2344,9 @@ Weeks before the sale, Flipkart's AI models predict:
 - How many delivery partners to activate in each area
 
 They pre-position inventory so that when you order a phone during the sale, it's likely already at a warehouse in your city, not 2,000 km away.
+
+![Automated warehouse robots moving shelves in a fulfilment centre](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Amazon_Robotics_-_Kiva_Robots_in_Warehouse.jpg/1280px-Amazon_Robotics_-_Kiva_Robots_in_Warehouse.jpg)
+*Amazon Kiva robots — these orange robots slide under shelving units and carry them to human pickers, eliminating walking entirely. (Image: Wikimedia Commons, CC BY 2.0)*
 
 ### 15.2 Warehouse Robots and Automation
 
@@ -2433,6 +2591,193 @@ Let's follow Nadia from the beginning to where she is today:
 - Consider a 3PL partner for Delhi-NCR instead of her own warehouse
 - Explore ONDC (Open Network for Digital Commerce) as another sales channel
 - Maybe, someday, warehouse robots... but she's not in a rush.
+
+---
+
+# INTERACTIVE TOOLS
+
+Practice the concepts from this guide with these free, browser-based calculators. No installation needed — just open the HTML file and start calculating.
+
+### EOQ Calculator
+**[Open EOQ Calculator](tools/eoq-calculator.html)**
+
+Enter your annual demand, ordering cost, and holding cost per unit — get the optimal order quantity that minimises total inventory cost. Includes a comparison table showing why EOQ is the sweet spot.
+- **Use after:** Chapter 6.3 (Economic Order Quantity)
+
+### Safety Stock Calculator
+**[Open Safety Stock Calculator](tools/safety-stock-calculator.html)**
+
+Enter your average daily demand, demand variability, lead time, and desired service level — get the safety stock quantity and reorder point. Includes a plain-English explanation of what the numbers mean.
+- **Use after:** Chapter 6.2 (Safety Stock)
+
+### Reorder Point Calculator
+**[Open Reorder Point Calculator](tools/reorder-point-calculator.html)**
+
+Enter your daily usage rate, lead time, and safety stock — get the exact stock level at which you should place your next order. Includes a visual stock-over-time chart.
+- **Use after:** Chapter 6.1 (Reorder Point)
+
+### ABC Analysis Tool
+**[Open ABC Analysis Tool](tools/abc-analysis.html)**
+
+Paste your product names and annual revenue — get an instant ABC classification with colour-coded charts. Shows which products are your A-class stars, B-class middle, and C-class long tail.
+- **Use after:** Chapter 4 (ABC Classification)
+
+---
+
+# APPENDIX: HANDS-ON SOFTWARE WALKTHROUGH
+
+> This section walks you through real software that inventory and asset managers use every day. All tools mentioned are free or have free tiers.
+
+## A. ERPNext — Open-Source ERP (Made in India)
+
+ERPNext is a free, open-source ERP system built by Frappe Technologies (based in Mumbai). It handles inventory, accounting, HR, manufacturing, and more — with built-in GST support.
+
+### Why ERPNext for learning?
+- **Free** — fully open-source, no licence fees
+- **Indian** — built with GST, Indian accounting standards, and ₹ in mind
+- **Complete** — inventory + accounting + manufacturing + sales all in one
+- **Real** — used by thousands of businesses in India
+
+### Quick start: Try ERPNext without installing anything
+
+1. Go to [https://frappecloud.com](https://frappecloud.com)
+2. Sign up for a free trial site (no credit card needed)
+3. You'll get a full ERPNext instance running in the cloud
+
+### Step-by-step: Your first inventory workflow
+
+**Step 1: Create your company**
+- On first login, the setup wizard asks for company name, country (India), and default currency (INR)
+- Set your fiscal year (April to March for India)
+
+**Step 2: Create items (products)**
+- Go to **Stock > Item > New Item**
+- Fill in: Item Name ("Biryani Masala 100g"), Item Group ("Spices"), UOM ("Nos" for number of jars)
+- Set "Maintain Stock" = Yes
+- Save
+
+**Step 3: Create a warehouse**
+- Go to **Stock > Warehouse > New Warehouse**
+- Name it ("Pune Main Godown")
+- Set the parent warehouse and company
+
+**Step 4: Set reorder levels**
+- Open your item, scroll to "Reorder" section
+- Set: Warehouse = "Pune Main Godown", Reorder Level = 20, Reorder Qty = 50
+- ERPNext will now alert you when stock drops below 20
+
+**Step 5: Receive stock (Stock Entry)**
+- Go to **Stock > Stock Entry > New**
+- Purpose: "Material Receipt"
+- Add items, quantities, and the target warehouse
+- Submit — your stock levels update instantly
+
+**Step 6: Process a sales order**
+- **Selling > Sales Order > New** — add customer, items, quantities
+- From the Sales Order, create a **Delivery Note** (this deducts stock)
+- From the Delivery Note, create a **Sales Invoice** (with GST)
+
+**Step 7: Check stock levels**
+- **Stock > Stock Balance** — see current stock for all items across all warehouses
+- **Stock > Stock Ledger** — see every transaction (like a bank statement for inventory)
+
+### Key ERPNext reports for inventory
+| Report | What it shows |
+|--------|--------------|
+| Stock Balance | Current quantity and value per item per warehouse |
+| Stock Ledger | Every stock movement (receipt, issue, transfer) |
+| Stock Projected Qty | Current stock + on-order - reserved = what's actually available |
+| Item-wise Stock Movement | Inflows and outflows for a specific item |
+| Stock Ageing | How long items have been sitting (find dead stock!) |
+
+## B. Tally Prime — India's Most-Used Business Software
+
+Tally Prime is the accounting software that most Indian businesses already use. It also has basic inventory management.
+
+### Inventory in Tally Prime — Quick walkthrough
+
+**Enable inventory features:**
+1. Open Tally Prime
+2. Go to **Features (F11)** > Enable "Maintain Accounts with Inventory"
+
+**Create stock items:**
+1. **Gateway > Create > Stock Item**
+2. Enter: Name, Under (stock group), Units, GST rate
+
+**Create a godown (warehouse):**
+1. **Gateway > Create > Godown**
+2. Enter name and location
+
+**Record a purchase:**
+1. **Gateway > Vouchers > Purchase (F9)**
+2. Enter supplier, items, quantities, rates
+3. Tally automatically updates stock and GST registers
+
+**Record a sale:**
+1. **Gateway > Vouchers > Sales (F8)**
+2. Enter customer, items, quantities, selling price
+3. Stock is deducted, GST is calculated, invoice is generated
+
+**Check stock:**
+- **Gateway > Display > Statements of Inventory > Stock Summary** — shows all items with current quantities and values
+- **Gateway > Display > Statements of Inventory > Godown Summary** — stock by warehouse
+
+### Tally vs ERPNext for inventory
+
+| Feature | Tally Prime | ERPNext |
+|---------|------------|---------|
+| Price | ₹18,000/year (Silver) | Free (open-source) |
+| Best for | Accounting + basic inventory | Full inventory + manufacturing + multi-warehouse |
+| GST support | Excellent | Excellent |
+| Multi-warehouse | Basic | Advanced (with transfers, bin locations) |
+| Reorder alerts | Limited | Built-in with auto Material Request |
+| Barcode support | Basic | Full |
+| Learning curve | Moderate | Steeper |
+
+## C. Google Sheets Inventory Template
+
+If you're just starting out (like Nadia in Month 0-6), a spreadsheet is perfectly fine. Here's a template you can copy:
+
+### Basic inventory tracker columns
+
+```
+| SKU | Product Name | Category | Current Stock | Min Level | Max Level | Unit Cost (₹) | Total Value (₹) | Last Updated | Action Needed |
+|-----|-------------|----------|---------------|-----------|-----------|---------------|-----------------|--------------|---------------|
+| SP-BIR-REG-100 | Biryani Masala 100g | Spices | 45 | 20 | 60 | 180 | 8,100 | 2025-01-15 | OK |
+| SP-GAR-REG-100 | Garam Masala 100g | Spices | 12 | 15 | 40 | 150 | 1,800 | 2025-01-15 | ORDER! |
+```
+
+### Google Sheets formulas to use
+
+```
+Total Value:        =D2*F2              (Current Stock × Unit Cost)
+Action Needed:      =IF(D2<=E2,"ORDER!","OK")    (Compare stock to minimum)
+Order Quantity:      =IF(D2<=E2,F2-D2,0)          (Max Level minus Current Stock)
+Days of Stock Left: =D2/H2              (Current Stock ÷ Avg Daily Sales)
+Inventory Turnover: =I2/G2              (Annual COGS ÷ Average Inventory Value)
+```
+
+### How to set it up
+
+1. Open Google Sheets, create a new spreadsheet
+2. Create a sheet called "Stock" with the columns above
+3. Create a sheet called "Transactions" to log every in/out:
+   - Date | SKU | Type (IN/OUT) | Quantity | Notes
+4. Use SUMIFS to calculate current stock from transactions:
+   ```
+   Current Stock = SUMIFS(Transactions!D:D, Transactions!B:B, A2, Transactions!C:C, "IN")
+                 - SUMIFS(Transactions!D:D, Transactions!B:B, A2, Transactions!C:C, "OUT")
+   ```
+5. Add conditional formatting: red background when Current Stock <= Min Level
+
+### When to graduate from spreadsheets
+
+Move to proper software when:
+- You have more than 50-100 SKUs
+- You sell on multiple channels (online + offline)
+- You have more than 1 person updating inventory
+- You need automatic reorder alerts
+- You need barcode scanning
 
 ---
 

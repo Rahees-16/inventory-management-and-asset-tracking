@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABC Analysis Tool — Inventory Classification</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f0f4f8; color: #1a202c; line-height: 1.6; padding: 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; margin-bottom: 4px; color: #2d3748; }
+  .subtitle { color: #718096; font-size: 0.95rem; margin-bottom: 24px; }
+  .card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 20px; }
+  .card h2 { font-size: 1.1rem; margin-bottom: 16px; color: #2d3748; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; }
+  .field { margin-bottom: 16px; }
+  .field label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 4px; color: #4a5568; }
+  .field .hint { font-size: 0.8rem; color: #a0aec0; margin-bottom: 4px; }
+  .field textarea { width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 0.9rem; font-family: 'Courier New', monospace; transition: border-color 0.2s; resize: vertical; min-height: 160px; }
+  .field textarea:focus { outline: none; border-color: #dd6b20; }
+  .btn-row { display: flex; gap: 10px; }
+  .btn { flex: 1; padding: 12px; background: #dd6b20; color: #fff; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+  .btn:hover { background: #c05621; }
+  .btn:active { transform: scale(0.98); }
+  .btn-secondary { background: #718096; }
+  .btn-secondary:hover { background: #4a5568; }
+  .result { display: none; }
+  .result.show { display: block; }
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+  .summary-box { border-radius: 8px; padding: 14px; text-align: center; }
+  .summary-box.a { background: #fed7d7; border: 2px solid #e53e3e; }
+  .summary-box.b { background: #fefcbf; border: 2px solid #d69e2e; }
+  .summary-box.c { background: #c6f6d5; border: 2px solid #38a169; }
+  .summary-box .grade { font-size: 1.8rem; font-weight: 800; }
+  .summary-box.a .grade { color: #e53e3e; }
+  .summary-box.b .grade { color: #d69e2e; }
+  .summary-box.c .grade { color: #38a169; }
+  .summary-box .stat { font-size: 0.8rem; color: #4a5568; margin-top: 4px; }
+  .summary-box .stat strong { font-size: 1rem; }
+  table.abc { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 16px; }
+  table.abc th { background: #edf2f7; padding: 10px 8px; text-align: left; font-weight: 600; color: #4a5568; border-bottom: 2px solid #e2e8f0; }
+  table.abc td { padding: 8px; border-bottom: 1px solid #e2e8f0; }
+  table.abc tr:hover { background: #f7fafc; }
+  .badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-weight: 700; font-size: 0.8rem; }
+  .badge-A { background: #fed7d7; color: #c53030; }
+  .badge-B { background: #fefcbf; color: #b7791f; }
+  .badge-C { background: #c6f6d5; color: #276749; }
+  .chart-wrap { margin-bottom: 16px; }
+  .bar-row { display: flex; align-items: center; margin-bottom: 6px; }
+  .bar-label { width: 120px; font-size: 0.8rem; color: #4a5568; text-align: right; padding-right: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .bar-track { flex: 1; height: 22px; background: #edf2f7; border-radius: 4px; overflow: hidden; position: relative; }
+  .bar-fill { height: 100%; border-radius: 4px; transition: width 0.4s; }
+  .bar-fill.a { background: #e53e3e; }
+  .bar-fill.b { background: #d69e2e; }
+  .bar-fill.c { background: #38a169; }
+  .bar-pct { width: 50px; font-size: 0.8rem; color: #718096; padding-left: 6px; }
+  .formula { background: #fffbeb; border-radius: 8px; padding: 14px; margin-top: 12px; font-size: 0.85rem; color: #744210; }
+  a.back { display: inline-block; margin-bottom: 16px; color: #dd6b20; text-decoration: none; font-size: 0.9rem; }
+  a.back:hover { text-decoration: underline; }
+  @media (max-width: 600px) {
+    .summary-grid { grid-template-columns: 1fr; }
+    .bar-label { width: 80px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../inventory-management-and-asset-tracking.md">&larr; Back to textbook</a>
+  <h1>ABC Analysis Tool</h1>
+  <p class="subtitle">Classify your products into A (stars), B (middle), and C (long tail)</p>
+
+  <div class="card">
+    <h2>Enter Your Products</h2>
+    <div class="field">
+      <label>Product Data (one per line)</label>
+      <div class="hint">Format: <strong>Product Name, Annual Revenue</strong> — e.g. "Biryani Masala, 450000"</div>
+      <textarea id="data" placeholder="Biryani Masala, 450000
+Garam Masala, 280000
+Chai Masala, 120000
+Chole Masala, 95000
+Tandoori Rub, 85000
+Pav Bhaji Masala, 60000
+Sambar Powder, 45000
+Rasam Powder, 30000
+Pickle Masala, 20000
+Chaat Masala, 15000"></textarea>
+    </div>
+    <div class="btn-row">
+      <button class="btn" onclick="analyze()">Run ABC Analysis</button>
+      <button class="btn btn-secondary" onclick="loadSample()">Load Sample Data</button>
+    </div>
+  </div>
+
+  <div class="result card" id="result">
+    <h2>Classification Results</h2>
+
+    <div class="summary-grid">
+      <div class="summary-box a">
+        <div class="grade">A</div>
+        <div class="stat"><strong id="aCount">—</strong> items</div>
+        <div class="stat"><strong id="aPct">—</strong> of revenue</div>
+      </div>
+      <div class="summary-box b">
+        <div class="grade">B</div>
+        <div class="stat"><strong id="bCount">—</strong> items</div>
+        <div class="stat"><strong id="bPct">—</strong> of revenue</div>
+      </div>
+      <div class="summary-box c">
+        <div class="grade">C</div>
+        <div class="stat"><strong id="cCount">—</strong> items</div>
+        <div class="stat"><strong id="cPct">—</strong> of revenue</div>
+      </div>
+    </div>
+
+    <h3 style="font-size:0.95rem; margin-bottom:10px; color:#4a5568;">Revenue Distribution</h3>
+    <div class="chart-wrap" id="chart"></div>
+
+    <h3 style="font-size:0.95rem; margin-bottom:10px; color:#4a5568;">Detailed Breakdown</h3>
+    <div style="overflow-x:auto;">
+      <table class="abc" id="table">
+        <thead>
+          <tr><th>#</th><th>Product</th><th>Revenue</th><th>% of Total</th><th>Cumulative %</th><th>Class</th></tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+
+    <div class="formula">
+      <strong>How ABC works:</strong> Sort all items by revenue (highest first). The top items contributing to ~80% of total revenue are <strong>A</strong>. The next ~15% are <strong>B</strong>. The remaining ~5% are <strong>C</strong>. Focus your time and attention on A items.
+    </div>
+  </div>
+</div>
+
+<script>
+function fmt(n) { return '\u20B9' + Math.round(n).toLocaleString('en-IN'); }
+
+function loadSample() {
+  document.getElementById('data').value =
+    'Biryani Masala, 450000\nGaram Masala, 280000\nChai Masala, 120000\nChole Masala, 95000\nTandoori Rub, 85000\nPav Bhaji Masala, 60000\nSambar Powder, 45000\nRasam Powder, 30000\nPickle Masala, 20000\nChaat Masala, 15000';
+}
+
+function buildEl(tag, className, text) {
+  var el = document.createElement(tag);
+  if (className) el.className = className;
+  if (text !== undefined) el.textContent = text;
+  return el;
+}
+
+function analyze() {
+  var raw = document.getElementById('data').value.trim();
+  if (!raw) { alert('Please enter product data.'); return; }
+
+  var lines = raw.split('\n').filter(function(l) { return l.trim(); });
+  var items = [];
+  for (var i = 0; i < lines.length; i++) {
+    var parts = lines[i].split(',');
+    if (parts.length < 2) continue;
+    var name = parts[0].trim();
+    var rev = parseFloat(parts[1].replace(/[^\d.]/g, ''));
+    if (name && !isNaN(rev) && rev > 0) items.push({ name: name, rev: rev });
+  }
+  if (items.length === 0) { alert('No valid data found. Use format: Product Name, Revenue'); return; }
+
+  items.sort(function(a, b) { return b.rev - a.rev; });
+  var total = items.reduce(function(s, it) { return s + it.rev; }, 0);
+
+  var cum = 0;
+  for (var i = 0; i < items.length; i++) {
+    cum += items[i].rev;
+    items[i].pct = (items[i].rev / total) * 100;
+    items[i].cumPct = (cum / total) * 100;
+    if (items[i].cumPct <= 80) items[i].cls = 'A';
+    else if (items[i].cumPct <= 95) items[i].cls = 'B';
+    else items[i].cls = 'C';
+  }
+  if (items.length > 0 && items[0].cls !== 'A') items[0].cls = 'A';
+
+  var counts = { A: 0, B: 0, C: 0 };
+  var revs = { A: 0, B: 0, C: 0 };
+  for (var i = 0; i < items.length; i++) {
+    counts[items[i].cls]++;
+    revs[items[i].cls] += items[i].rev;
+  }
+
+  document.getElementById('aCount').textContent = counts.A;
+  document.getElementById('bCount').textContent = counts.B;
+  document.getElementById('cCount').textContent = counts.C;
+  document.getElementById('aPct').textContent = ((revs.A / total) * 100).toFixed(1) + '%';
+  document.getElementById('bPct').textContent = ((revs.B / total) * 100).toFixed(1) + '%';
+  document.getElementById('cPct').textContent = ((revs.C / total) * 100).toFixed(1) + '%';
+
+  // Build chart with DOM methods
+  var chartEl = document.getElementById('chart');
+  chartEl.textContent = '';
+  var maxRev = items[0].rev;
+  for (var i = 0; i < items.length; i++) {
+    var w = ((items[i].rev / maxRev) * 100).toFixed(1);
+    var row = buildEl('div', 'bar-row');
+    var label = buildEl('div', 'bar-label', items[i].name);
+    label.title = items[i].name;
+    var track = buildEl('div', 'bar-track');
+    var fill = buildEl('div', 'bar-fill ' + items[i].cls.toLowerCase());
+    fill.style.width = w + '%';
+    track.appendChild(fill);
+    var pct = buildEl('div', 'bar-pct', items[i].pct.toFixed(1) + '%');
+    row.appendChild(label);
+    row.appendChild(track);
+    row.appendChild(pct);
+    chartEl.appendChild(row);
+  }
+
+  // Build table with DOM methods
+  var tbody = document.getElementById('tbody');
+  tbody.textContent = '';
+  for (var i = 0; i < items.length; i++) {
+    var tr = document.createElement('tr');
+    var td0 = buildEl('td', null, String(i + 1));
+    var td1 = buildEl('td', null, items[i].name);
+    var td2 = buildEl('td', null, fmt(items[i].rev));
+    td2.style.textAlign = 'right';
+    var td3 = buildEl('td', null, items[i].pct.toFixed(1) + '%');
+    td3.style.textAlign = 'right';
+    var td4 = buildEl('td', null, items[i].cumPct.toFixed(1) + '%');
+    td4.style.textAlign = 'right';
+    var td5 = document.createElement('td');
+    var badge = buildEl('span', 'badge badge-' + items[i].cls, items[i].cls);
+    td5.appendChild(badge);
+    tr.appendChild(td0);
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.appendChild(td4);
+    tr.appendChild(td5);
+    tbody.appendChild(tr);
+  }
+
+  document.getElementById('result').classList.add('show');
+  document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

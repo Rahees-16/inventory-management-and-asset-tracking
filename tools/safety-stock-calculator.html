@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safety Stock & Reorder Point Calculator</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f0f4f8; color: #1a202c; line-height: 1.6; padding: 20px; }
+  .container { max-width: 600px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; margin-bottom: 4px; color: #2d3748; }
+  .subtitle { color: #718096; font-size: 0.95rem; margin-bottom: 24px; }
+  .card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 20px; }
+  .card h2 { font-size: 1.1rem; margin-bottom: 16px; color: #2d3748; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; }
+  .field { margin-bottom: 16px; }
+  .field label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 4px; color: #4a5568; }
+  .field .hint { font-size: 0.8rem; color: #a0aec0; margin-bottom: 4px; }
+  .field input, .field select { width: 100%; padding: 10px 14px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; transition: border-color 0.2s; background: #fff; }
+  .field input:focus, .field select:focus { outline: none; border-color: #38a169; }
+  .btn { width: 100%; padding: 12px; background: #38a169; color: #fff; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+  .btn:hover { background: #2f855a; }
+  .btn:active { transform: scale(0.98); }
+  .result { display: none; }
+  .result.show { display: block; }
+  .result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+  .result-box { background: #f0fff4; border-radius: 8px; padding: 14px; text-align: center; }
+  .result-box.highlight { background: #c6f6d5; border: 2px solid #38a169; }
+  .result-box .label { font-size: 0.8rem; color: #4a5568; text-transform: uppercase; letter-spacing: 0.5px; }
+  .result-box .value { font-size: 1.5rem; font-weight: 700; color: #276749; margin-top: 4px; }
+  .result-box .unit { font-size: 0.8rem; color: #718096; }
+  .explain { background: #f7fafc; border-radius: 8px; padding: 16px; font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
+  .explain strong { color: #2d3748; }
+  .formula { background: #fffbeb; border-radius: 8px; padding: 14px; margin-top: 12px; font-size: 0.85rem; color: #744210; }
+  .formula code { background: #fefcbf; padding: 2px 6px; border-radius: 4px; font-family: 'Courier New', monospace; }
+  a.back { display: inline-block; margin-bottom: 16px; color: #38a169; text-decoration: none; font-size: 0.9rem; }
+  a.back:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../inventory-management-and-asset-tracking.md">&larr; Back to textbook</a>
+  <h1>Safety Stock &amp; Reorder Point Calculator</h1>
+  <p class="subtitle">Calculate how much buffer stock to keep and when to reorder</p>
+
+  <div class="card">
+    <h2>Enter Your Data</h2>
+    <div class="field">
+      <label>Average Daily Demand (units/day)</label>
+      <div class="hint">How many units you sell or use on an average day</div>
+      <input type="number" id="avgDemand" placeholder="e.g. 50" min="0" step="any">
+    </div>
+    <div class="field">
+      <label>Standard Deviation of Daily Demand</label>
+      <div class="hint">How much daily demand varies (if unsure, use 20-30% of average demand)</div>
+      <input type="number" id="stdDemand" placeholder="e.g. 10" min="0" step="any">
+    </div>
+    <div class="field">
+      <label>Lead Time (days)</label>
+      <div class="hint">How many days between placing an order and receiving it</div>
+      <input type="number" id="leadTime" placeholder="e.g. 7" min="0" step="any">
+    </div>
+    <div class="field">
+      <label>Service Level (desired confidence)</label>
+      <div class="hint">How confident you want to be about not running out</div>
+      <select id="serviceLevel">
+        <option value="1.28">90% — adequate for low-value items</option>
+        <option value="1.65" selected>95% — good for most products</option>
+        <option value="1.96">97.5% — important items</option>
+        <option value="2.33">99% — critical items (hospitals, etc.)</option>
+      </select>
+    </div>
+    <button class="btn" onclick="calculate()">Calculate Safety Stock</button>
+  </div>
+
+  <div class="result card" id="result">
+    <h2>Results</h2>
+    <div class="result-grid">
+      <div class="result-box highlight">
+        <div class="label">Safety Stock</div>
+        <div class="value" id="ssVal">—</div>
+        <div class="unit">units (buffer)</div>
+      </div>
+      <div class="result-box highlight">
+        <div class="label">Reorder Point</div>
+        <div class="value" id="ropVal">—</div>
+        <div class="unit">units (order trigger)</div>
+      </div>
+      <div class="result-box">
+        <div class="label">Lead Time Demand</div>
+        <div class="value" id="ltdVal">—</div>
+        <div class="unit">units used during lead time</div>
+      </div>
+      <div class="result-box">
+        <div class="label">Days of Buffer</div>
+        <div class="value" id="bufDays">—</div>
+        <div class="unit">days of extra cover</div>
+      </div>
+    </div>
+
+    <div class="explain" id="explain"></div>
+
+    <div class="formula">
+      <strong>Formulas used:</strong><br>
+      <code>Safety Stock = Z &times; &sigma; &times; &radic;L</code><br>
+      <code>Reorder Point = (Avg Daily Demand &times; Lead Time) + Safety Stock</code><br>
+      where Z = service level factor, &sigma; = std dev of daily demand, L = lead time in days.
+    </div>
+  </div>
+</div>
+
+<script>
+function fmtN(n) { return Math.round(n).toLocaleString('en-IN'); }
+
+function calculate() {
+  var avg = parseFloat(document.getElementById('avgDemand').value);
+  var std = parseFloat(document.getElementById('stdDemand').value);
+  var lt = parseFloat(document.getElementById('leadTime').value);
+  var z = parseFloat(document.getElementById('serviceLevel').value);
+  if (isNaN(avg) || isNaN(std) || isNaN(lt) || avg <= 0 || std < 0 || lt <= 0) {
+    alert('Please enter valid positive numbers for all fields.'); return;
+  }
+
+  var ss = z * std * Math.sqrt(lt);
+  var ltd = avg * lt;
+  var rop = ltd + ss;
+  var bufDays = avg > 0 ? ss / avg : 0;
+
+  document.getElementById('ssVal').textContent = fmtN(ss);
+  document.getElementById('ropVal').textContent = fmtN(rop);
+  document.getElementById('ltdVal').textContent = fmtN(ltd);
+  document.getElementById('bufDays').textContent = bufDays.toFixed(1);
+
+  var slText = document.getElementById('serviceLevel').options[document.getElementById('serviceLevel').selectedIndex].text;
+  var el = document.getElementById('explain');
+  el.textContent = '';
+
+  var b1 = document.createElement('strong');
+  b1.textContent = 'What this means: ';
+  el.appendChild(b1);
+  el.appendChild(document.createTextNode(
+    'During the ' + lt + '-day lead time, you will use about '
+  ));
+  var b2 = document.createElement('strong');
+  b2.textContent = fmtN(ltd) + ' units';
+  el.appendChild(b2);
+  el.appendChild(document.createTextNode(
+    '. Your safety stock of '
+  ));
+  var b3 = document.createElement('strong');
+  b3.textContent = fmtN(ss) + ' units';
+  el.appendChild(b3);
+  el.appendChild(document.createTextNode(
+    ' (' + bufDays.toFixed(1) + ' days of extra cover) protects against demand variability at a '
+  ));
+  var b4 = document.createElement('strong');
+  b4.textContent = slText.split('—')[0].trim();
+  el.appendChild(b4);
+  el.appendChild(document.createTextNode(
+    ' confidence level. When your stock drops to '
+  ));
+  var b5 = document.createElement('strong');
+  b5.textContent = fmtN(rop) + ' units';
+  el.appendChild(b5);
+  el.appendChild(document.createTextNode(', place a new order.'));
+
+  document.getElementById('result').classList.add('show');
+  document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

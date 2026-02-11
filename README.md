@@ -38,7 +38,30 @@ A comprehensive A-Z textbook on inventory management and asset tracking — from
 - **Chapter 17** — 8 common mistakes and how to avoid them
 - **Chapter 18** — Nadia's complete journey from home kitchen to multi-channel business
 
-Plus a full **glossary** and **further reading** section.
+Plus: **interactive tools**, **software walkthrough** (ERPNext, Tally Prime, Google Sheets), full **glossary**, and **further reading**.
+
+## Interactive Calculators
+
+Practice the concepts hands-on with browser-based tools (no installation needed):
+
+| Tool | What it does | File |
+|------|-------------|------|
+| **EOQ Calculator** | Find the optimal order quantity that minimises total cost | [`tools/eoq-calculator.html`](tools/eoq-calculator.html) |
+| **Safety Stock Calculator** | Calculate buffer stock and reorder point from demand variability | [`tools/safety-stock-calculator.html`](tools/safety-stock-calculator.html) |
+| **Reorder Point Calculator** | Know exactly when to place your next order | [`tools/reorder-point-calculator.html`](tools/reorder-point-calculator.html) |
+| **ABC Analysis Tool** | Classify products into A/B/C tiers with charts | [`tools/abc-analysis.html`](tools/abc-analysis.html) |
+
+Each tool is a single self-contained HTML file — open it in any browser. Uses ₹ (Indian Rupee) formatting and works on mobile.
+
+## Visual Diagrams
+
+The textbook includes **Mermaid diagrams** that render as colourful visual flowcharts on GitHub:
+- Inventory types flow (raw materials → WIP → finished goods → customer)
+- Warehouse goods flow (receiving → storage → pick → pack → ship)
+- Asset lifecycle (plan → buy → tag → deploy → maintain → depreciate → dispose)
+- E-commerce fulfillment models
+- Demand forecasting decision tree
+- FIFO vs LIFO comparison
 
 ## Running Case Study: Nadia's Spice Shop
 
@@ -63,3 +86,10 @@ The guide includes Indian and global examples from: Flipkart, Amazon, DMart, Rel
 - *Inventory Management Explained* — David J. Piasecki
 
 **Free tools to practice with:** ERPNext (Indian, open-source, GST-ready), Odoo, Snipe-IT, Tally Prime (free trial)
+
+## Software Walkthrough
+
+The textbook includes a hands-on appendix covering:
+- **ERPNext** — step-by-step: create items, set reorder points, receive stock, process sales orders, check stock reports
+- **Tally Prime** — enable inventory, create stock items, record purchases/sales, check stock summaries
+- **Google Sheets** — inventory tracker template with formulas for reorder alerts, days-of-stock, and turnover
