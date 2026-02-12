@@ -34,11 +34,11 @@ A comprehensive A-Z textbook on inventory management and asset tracking — from
 - **Chapter 15** — AI-powered forecasting, warehouse robots, IoT sensors, blockchain traceability, digital twins
 
 ### Part VIII: Putting It All Together
-- **Chapter 16** — Step-by-step guide to building your inventory system (with Indian tool recommendations: Tally, Vyapar, Zoho, ERPNext)
+- **Chapter 16** — Step-by-step guide to building your inventory system (with Indian tool recommendations: Vyapar, Zoho, ERPNext)
 - **Chapter 17** — 8 common mistakes and how to avoid them
 - **Chapter 18** — Nadia's complete journey from home kitchen to multi-channel business
 
-Plus: **interactive tools**, **software walkthrough** (ERPNext, Tally Prime, Google Sheets), full **glossary**, and **further reading**.
+Plus: **interactive tools**, **software walkthrough** (ERPNext, Google Sheets), full **glossary**, and **further reading**.
 
 ## Interactive Calculators
 
@@ -85,13 +85,12 @@ The guide includes Indian and global examples from: Flipkart, Amazon, DMart, Rel
 - *Toyota Production System* — Taiichi Ohno
 - *Inventory Management Explained* — David J. Piasecki
 
-**Free tools to practice with:** ERPNext (Indian, open-source, GST-ready), Odoo, Snipe-IT, Tally Prime (free trial)
+**Free tools to practice with:** ERPNext (Indian, open-source, GST-ready), Odoo, Snipe-IT
 
 ## Software Walkthrough
 
 The textbook includes a hands-on appendix covering:
-- **ERPNext** — step-by-step: create items, set reorder points, receive stock, process sales orders, check stock reports
-- **Tally Prime** — enable inventory, create stock items, record purchases/sales, check stock summaries
+- **ERPNext** — Nadia's full setup walkthrough: company creation, items, warehouses, reorder levels, stock entries (receipt, manufacture, transfer), the sales chain (SO → DN → SI), the purchase chain (PO → PR → PI), and all 5 key stock reports
 - **Google Sheets** — inventory tracker template with formulas for reorder alerts, days-of-stock, and turnover
 
 ## Additional Guides

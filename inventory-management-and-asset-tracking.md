@@ -2593,113 +2593,377 @@ Let's follow Nadia from the beginning to where she is today:
 
 > This section walks you through real software that inventory and asset managers use every day. All tools mentioned are free or have free tiers.
 
-## A. ERPNext — Open-Source ERP (Made in India)
+## A. ERPNext — Nadia Sets Up Her ERP
 
-ERPNext is a free, open-source ERP system built by Frappe Technologies (based in Mumbai). It handles inventory, accounting, HR, manufacturing, and more — with built-in GST support.
+It's Month 24. Nadia is doing ₹12 lakh/month, has 60+ SKUs, 8 employees, a 2,000 sq ft warehouse in Pune, and she's juggling Zoho + Unicommerce + Google Sheets for recipes + WhatsApp for orders. She spends every Sunday reconciling four systems. They never agree. She's always 10-15% off somewhere.
 
-### Why ERPNext for learning?
-- **Free** — fully open-source, no licence fees
-- **Indian** — built with GST, Indian accounting standards, and ₹ in mind
-- **Complete** — inventory + accounting + manufacturing + sales all in one
-- **Real** — used by thousands of businesses in India
+She's also been paying for multiple tools — Zoho Inventory (₹3,000/month), plus her CA keeps asking for Tally Prime data. Setting up yet another accounting tool alongside her inventory tools means yet another system to reconcile.
 
-### Quick start: Try ERPNext without installing anything
+She picks ERPNext because:
+- **Free** — fully open-source, no licence fees (saves ₹36,000/year on Zoho alone, plus ₹18,000/year if she were to buy Tally Prime Silver)
+- **Indian** — built by Frappe Technologies (Mumbai), with GST, Indian accounting standards, and ₹ baked in
+- **All-in-one** — inventory + accounting + purchasing + selling + manufacturing + GST returns, all in the same system. No more reconciling four tools. No separate Tally needed — her CA can pull Trial Balance, P&L, Sales Register, and Purchase Register directly from ERPNext
+- **Real** — used by thousands of Indian businesses, from small D2C brands to mid-size manufacturers
+
+### Quick start: Try it without installing anything
 
 1. Go to [https://frappecloud.com](https://frappecloud.com)
 2. Sign up for a free trial site (no credit card needed)
-3. You'll get a full ERPNext instance running in the cloud
+3. You'll get a full ERPNext instance running in the cloud — ready in minutes
 
-### Step-by-step: Your first inventory workflow
+> **Follow along:** As you read each step below, do it on your own trial site. Use your own business details, or use Nadia's if you're just practising.
 
-**Step 1: Create your company**
-- On first login, the setup wizard asks for company name, country (India), and default currency (INR)
-- Set your fiscal year (April to March for India)
+---
 
-**Step 2: Create items (products)**
+### Step 1: Create your company
+
+Nadia opens ERPNext for the first time. The setup wizard asks for company name, country, currency, and fiscal year.
+
+**What Nadia enters:**
+- **Company Name:** Nadia's Spice Shop
+- **Country:** India
+- **Default Currency:** INR
+- **Fiscal Year:** April 2025 – March 2026
+
+**What you enter:** Your own company name, country, and fiscal year. For India, the fiscal year is always April to March.
+
+**Why this matters:** Every Stock Entry, every Sales Invoice, every GST return ties back to this company entity. When Nadia's CA files GST on the portal, the GSTIN is linked to this company. When the CA pulls the P&L at year-end, the fiscal year determines which transactions fall in which period. If she sets fiscal year as Jan–Dec instead of Apr–Mar, her quarterly GST filings won't align and her CA will make her redo everything.
+
+This isn't just "setup." This is the legal identity of her business inside the system — the same identity that would otherwise live in a separate Tally installation.
+
+---
+
+### Step 2: Create items
+
+Nadia needs to tell ERPNext about everything she buys, makes, and sells. She starts with her bestseller.
+
+**What Nadia enters for her finished product:**
 - Go to **Stock > Item > New Item**
-- Fill in: Item Name ("Biryani Masala 100g"), Item Group ("Spices"), UOM ("Nos" for number of jars)
-- Set "Maintain Stock" = Yes
+- **Item Name:** Biryani Masala 100g
+- **Item Code:** SP-BIR-REG-100 (her existing SKU system)
+- **Item Group:** Finished Goods > Spices
+- **UOM (Unit of Measure):** Nos (each jar is one unit)
+- **Maintain Stock:** Yes
 - Save
 
-**Step 3: Create a warehouse**
-- Go to **Stock > Warehouse > New Warehouse**
-- Name it ("Pune Main Godown")
-- Set the parent warehouse and company
+**Then she creates her raw materials:**
 
-**Step 4: Set reorder levels**
-- Open your item, scroll to "Reorder" section
-- Set: Warehouse = "Pune Main Godown", Reorder Level = 20, Reorder Qty = 50
-- ERPNext will now alert you when stock drops below 20
+| Item Name | Item Group | UOM | Maintain Stock |
+|-----------|-----------|-----|----------------|
+| Jeera (Cumin) | Raw Materials > Whole Spices | Kg | Yes |
+| Haldi (Turmeric) | Raw Materials > Ground Spices | Kg | Yes |
+| Lal Mirch (Red Chili) | Raw Materials > Whole Spices | Kg | Yes |
+| Jars 100g | Packaging | Nos | Yes |
+| Lids | Packaging | Nos | Yes |
+| Labels (Biryani Masala) | Packaging | Nos | Yes |
 
-**Step 5: Receive stock (Stock Entry)**
+**What you enter:** Your own products, raw materials, and packaging. The key decisions:
+- **Item Group:** Organise products logically. Nadia uses Raw Materials, Packaging, and Finished Goods as top-level groups. When she runs a Stock Balance report filtered by "Raw Materials," she sees just her spices — not 60 items jumbled together.
+- **UOM:** How you count it. Spices in Kg, jars in Nos (numbers), fabric in Metres.
+- **Maintain Stock = Yes** for anything physical. Nadia also offers gift-wrapping (₹50 extra) on her website — that's an item too, but with Maintain Stock = No. If she accidentally sets it to Yes, ERPNext will expect her to "receive" gift-wrapping into a warehouse before she can sell it.
+
+---
+
+### Step 3: Create warehouses
+
+Nadia doesn't just have one location. Her stock sits in multiple places.
+
+**What Nadia creates:**
+
+Go to **Stock > Warehouse > New Warehouse** for each:
+
+| Warehouse Name | Why it exists |
+|---------------|---------------|
+| Pune Main Godown | Her 2,000 sq ft rented warehouse — where she makes and stores everything |
+| Amazon FBA - Mumbai | Stock she sends to Amazon's fulfilment centre. She can't touch it — Amazon controls it |
+| Saturday Market Float | Stock loaded into her car every Friday night for the Saturday haat |
+
+**What you create:** One warehouse for each physical location where your stock sits. Even if it's just one room, create at least one.
+
+**Why separate warehouses matter:** Remember Nadia's Month 12 disaster — she sent 200 jars of an experimental blend to Amazon FBA, sold only 30 in 3 months, and paid ₹5,000+ in storage and removal fees. If those 200 jars were just lumped under "Pune Main Godown," her stock report would show 200 jars available — but she can't grab them for a Saturday market sale. They're locked in Amazon's warehouse in Mumbai.
+
+With separate warehouses, she sees:
+- Pune Main Godown: 45 jars (she can sell these anywhere)
+- Amazon FBA Mumbai: 200 jars (Amazon controls these, she's paying storage fees)
+- Saturday Market Float: 15 jars (in her car, on the way to market)
+
+**Total stock:** 260 jars. **Actually available for new decisions:** 45.
+
+---
+
+### Step 4: Set reorder levels
+
+Nadia opens her Biryani Masala item and scrolls to the **Reorder** section.
+
+**What Nadia enters:**
+- **Warehouse:** Pune Main Godown
+- **Reorder Level:** 40
+- **Reorder Qty:** 50
+
+ERPNext will now alert her when Biryani Masala in Pune drops below 40 jars.
+
+**Where do these numbers come from?**
+
+Nadia sells ~15 jars of Biryani Masala per day across all channels. Her raw material supplier at Crawford Market takes 2 days to deliver. So she needs at least 30 jars (15/day × 2 days) just to survive the lead time. Add a safety buffer for surprises — a supplier delay, a sudden Instagram order spike — and she sets the reorder level at 40.
+
+**Reorder Qty = 50** because her grinder processes one batch at a time, yielding ~50 jars. Her jar supplier also gives a discount at 50+. So 50 is her economic batch quantity.
+
+**What you enter:** Your own numbers. Think: "How many units do I sell per day? How long does my supplier take to deliver? Add a buffer. That's your reorder level."
+
+**Why this matters:** Before this, Nadia ran out of Biryani Masala every Saturday by 11 AM. That's 20 customers walking away — not just ₹4,000 in lost revenue, but 20 people who might try a competitor for the first time. The reorder alert means she never has to remember to check stock levels. The system does it.
+
+---
+
+### Step 5: Receive stock (Stock Entry)
+
+Stock doesn't exist in ERPNext until you formally receive it. Here are the three types of stock entries Nadia uses regularly:
+
+#### 5a. Raw material arrives from the supplier
+
+Nadia's Crawford Market supplier delivers 10 kg of jeera, 5 kg of haldi, and 200 jars.
+
 - Go to **Stock > Stock Entry > New**
-- Purpose: "Material Receipt"
-- Add items, quantities, and the target warehouse
-- Submit — your stock levels update instantly
+- **Purpose:** Material Receipt
+- Add items:
 
-**Step 6: Process a sales order**
-- **Selling > Sales Order > New** — add customer, items, quantities
-- From the Sales Order, create a **Delivery Note** (this deducts stock)
-- From the Delivery Note, create a **Sales Invoice** (with GST)
+| Item | Qty | UOM | Target Warehouse | Rate |
+|------|-----|-----|-----------------|------|
+| Jeera (Cumin) | 10 | Kg | Pune Main Godown | ₹280/kg |
+| Haldi (Turmeric) | 5 | Kg | Pune Main Godown | ₹180/kg |
+| Jars 100g | 200 | Nos | Pune Main Godown | ₹12 each |
 
-**Step 7: Check stock levels**
-- **Stock > Stock Balance** — see current stock for all items across all warehouses
-- **Stock > Stock Ledger** — see every transaction (like a bank statement for inventory)
+- **Submit** — stock levels update instantly.
 
-### Key ERPNext reports for inventory
-| Report | What it shows |
-|--------|--------------|
-| Stock Balance | Current quantity and value per item per warehouse |
-| Stock Ledger | Every stock movement (receipt, issue, transfer) |
-| Stock Projected Qty | Current stock + on-order - reserved = what's actually available |
-| Item-wise Stock Movement | Inflows and outflows for a specific item |
-| Stock Ageing | How long items have been sitting (find dead stock!) |
+> **Note:** For cash purchases at Crawford Market with no formal order, a Material Receipt is fine. For supplier relationships where Nadia wants to track what she ordered vs. what she received (and she should — Ramesh delivers 9.2 kg when she ordered 10, and this happens monthly), the proper flow is **Purchase Order → Purchase Receipt → Purchase Invoice**. More on this in Step 7.
 
-## B. Tally Prime — India's Most-Used Business Software
+#### 5b. Manufacturing — turning raw materials into Biryani Masala
 
-Tally Prime is the accounting software that most Indian businesses already use. It also has basic inventory management.
+Nadia's helper mixes a batch. She does another Stock Entry:
 
-### Inventory in Tally Prime — Quick walkthrough
+- **Purpose:** Manufacture
+- **Source items (consumed from Pune Main Godown):**
 
-**Enable inventory features:**
-1. Open Tally Prime
-2. Go to **Features (F11)** > Enable "Maintain Accounts with Inventory"
+| Item | Qty consumed |
+|------|-------------|
+| Jeera | 0.5 kg |
+| Haldi | 0.3 kg |
+| Lal Mirch | 0.2 kg |
+| Jars 100g | 50 |
+| Lids | 50 |
+| Labels (Biryani Masala) | 50 |
 
-**Create stock items:**
-1. **Gateway > Create > Stock Item**
-2. Enter: Name, Under (stock group), Units, GST rate
+- **Target item (produced into Pune Main Godown):**
 
-**Create a godown (warehouse):**
-1. **Gateway > Create > Godown**
-2. Enter name and location
+| Item | Qty produced |
+|------|-------------|
+| Biryani Masala 100g | 50 |
 
-**Record a purchase:**
-1. **Gateway > Vouchers > Purchase (F9)**
-2. Enter supplier, items, quantities, rates
-3. Tally automatically updates stock and GST registers
+- **Submit** — raw materials go down, finished goods go up. The stock valuation now correctly shows the cost of each jar (total raw material cost ÷ 50 jars).
 
-**Record a sale:**
-1. **Gateway > Vouchers > Sales (F8)**
-2. Enter customer, items, quantities, selling price
-3. Stock is deducted, GST is calculated, invoice is generated
+#### 5c. Transfer stock to Amazon FBA
 
-**Check stock:**
-- **Gateway > Display > Statements of Inventory > Stock Summary** — shows all items with current quantities and values
-- **Gateway > Display > Statements of Inventory > Godown Summary** — stock by warehouse
+Nadia decides to send 30 jars to Amazon's warehouse:
 
-### Tally vs ERPNext for inventory
+- **Purpose:** Material Transfer
+- **Item:** Biryani Masala 100g — 30 nos
+- **Source Warehouse:** Pune Main Godown
+- **Target Warehouse:** Amazon FBA - Mumbai
+- **Submit** — her reports now show 20 jars in Pune, 30 at Amazon. Total is still 50, but she knows exactly where they are.
 
-| Feature | Tally Prime | ERPNext |
-|---------|------------|---------|
-| Price | ₹18,000/year (Silver) | Free (open-source) |
-| Best for | Accounting + basic inventory | Full inventory + manufacturing + multi-warehouse |
-| GST support | Excellent | Excellent |
-| Multi-warehouse | Basic | Advanced (with transfers, bin locations) |
-| Reorder alerts | Limited | Built-in with auto Material Request |
-| Barcode support | Basic | Full |
-| Learning curve | Moderate | Steeper |
+---
 
-## C. Google Sheets Inventory Template
+### Step 6: Process a sale — the full chain
+
+It's Saturday morning. Priya from "Green Leaf Gourmet" (one of Nadia's 8 Pune retail store customers) calls:
+
+> "Nadia, I need 24 jars of Biryani Masala, 12 Garam Masala, and 6 Chai Masala. Deliver by Wednesday."
+
+#### 6a. Create a Sales Order
+
+- Go to **Selling > Sales Order > New**
+- **Customer:** Green Leaf Gourmet
+- **Items:** Biryani Masala ×24, Garam Masala ×12, Chai Masala ×6
+- **Delivery Date:** Wednesday
+- **Payment Terms:** Net 15 (Priya pays within 15 days of invoice)
+- **Submit**
+
+**What the Sales Order does that a direct invoice doesn't:**
+
+1. **Reserves stock.** The moment she submits this SO, ERPNext's "Projected Quantity" report deducts these 42 jars from what's available. So when Nadia checks stock on Monday to plan her Amazon FBA shipment, it shows: "You have 80 jars of Biryani Masala, but 24 are reserved for Green Leaf. Actually available: 56." This is exactly the multi-channel problem she had at Month 18.
+
+2. **Creates a trackable promise.** If Wednesday comes and she hasn't delivered, the SO shows as "To Deliver." She has a list of unfulfilled orders, not a WhatsApp thread to scroll through.
+
+3. **Drives the downstream documents.** From this one SO, she'll create a Delivery Note (when stock leaves), then a Sales Invoice (when she bills). The chain is linked — every rupee is traceable.
+
+#### 6b. Deliver the goods
+
+On Wednesday, Nadia's helper loads the jars into the delivery van.
+
+- From the Sales Order, click **Create > Delivery Note**
+- ERPNext pre-fills everything from the SO. Confirm and **Submit**.
+- Stock deducts from Pune Main Godown: Biryani Masala 80 → 56, Garam Masala 40 → 28, Chai Masala 25 → 19.
+
+#### 6c. Bill the customer (with GST)
+
+- From the Delivery Note, click **Create > Sales Invoice**
+- ERPNext auto-calculates GST (spices are typically 5% GST under HSN 0910):
+
+| Item | Qty | Rate | Amount |
+|------|-----|------|--------|
+| Biryani Masala 100g | 24 | ₹150 | ₹3,600 |
+| Garam Masala 100g | 12 | ₹120 | ₹1,440 |
+| Chai Masala 100g | 6 | ₹100 | ₹600 |
+| **Subtotal** | | | **₹5,640** |
+| CGST 2.5% | | | ₹141 |
+| SGST 2.5% | | | ₹141 |
+| **Grand Total** | | | **₹5,922** |
+
+Priya gets this invoice. Nadia's books show ₹5,922 in Accounts Receivable. When Priya pays in 15 days, Nadia records a **Payment Entry** and the receivable clears.
+
+**The full chain: Sales Order → Delivery Note → Sales Invoice → Payment Entry**
+
+Every step is linked. If her CA asks "where did this ₹5,922 come from?", she traces it back from payment → invoice → delivery → original order. No Tally needed, no reconciliation needed — the accounting entry was created automatically when she submitted the invoice.
+
+---
+
+### Step 7: Purchase the right way — the PO chain
+
+Remember Nadia's Crawford Market supplier Ramesh who delivers 9.2 kg of jeera when she orders 10 kg? This happens every month and she loses 5-8% yearly. She needs a paper trail.
+
+#### 7a. Create a Purchase Order
+
+- Go to **Buying > Purchase Order > New**
+- **Supplier:** Ramesh Spices, Crawford Market
+- **Items:** Jeera 10 kg @ ₹280/kg, Haldi 5 kg @ ₹180/kg
+- **Expected Delivery:** Thursday
+- **Submit**
+
+#### 7b. Receive goods (Purchase Receipt)
+
+Thursday, Ramesh's delivery arrives. Nadia's helper weighs the bags.
+
+- From the Purchase Order, click **Create > Purchase Receipt**
+- She enters the **actual** received quantity: Jeera 9.2 kg (not 10)
+- ERPNext flags: "Ordered 10 kg, received 9.2 kg." She has a record.
+- **Submit** — stock for jeera increases by 9.2 kg.
+
+#### 7c. Record the bill (Purchase Invoice)
+
+- From the Purchase Receipt, click **Create > Purchase Invoice**
+- Now Nadia's books show she owes Ramesh for 9.2 kg, not 10.
+- When she pays him, she records a **Payment Entry**.
+
+**The full chain: Purchase Order → Purchase Receipt → Purchase Invoice → Payment Entry**
+
+After 6 months of POs, Nadia can show Ramesh: "You've shorted me by 47 kg this year. That's ₹13,160 worth of jeera." Without POs, it's her word against his.
+
+**What the PO also does:** Once Nadia submits the PO, ERPNext's Projected Quantity report includes the incoming stock. So even though she currently has only 3 kg of jeera, the report shows: Current 3 kg + On order 10 kg = 13 kg projected. She knows she's fine for the week.
+
+---
+
+### Step 8: Read the reports that replace Nadia's Sunday reconciliation
+
+These five reports are why Nadia never opens four systems on Sunday again.
+
+#### Stock Balance — "How much do I have right now?"
+
+**Where:** Stock > Stock Balance
+
+| Item | Warehouse | Qty | Value |
+|------|-----------|-----|-------|
+| Biryani Masala 100g | Pune Main Godown | 56 | ₹4,480 |
+| Biryani Masala 100g | Amazon FBA Mumbai | 30 | ₹2,400 |
+| Garam Masala 100g | Pune Main Godown | 28 | ₹1,960 |
+| Jeera | Pune Main Godown | 3 kg | ₹840 |
+
+**When to use it:** Every Monday for weekly planning. "Do I have enough to fill this week's orders? What do I need to make? What raw materials do I need to buy?"
+
+#### Stock Ledger — "What happened to my stock?"
+
+**Where:** Stock > Stock Ledger
+
+This is the bank statement for inventory. Every single movement:
+
+| Date | Item | Warehouse | Qty Change | Balance | Voucher |
+|------|------|-----------|------------|---------|---------|
+| Mon 9 AM | Biryani Masala | Pune Godown | -30 | 50 | Stock Entry (Transfer to FBA) |
+| Wed 2 PM | Biryani Masala | Pune Godown | +50 | 80 | Stock Entry (Manufactured) |
+| Wed 4 PM | Biryani Masala | Pune Godown | -24 | 56 | Delivery Note (Green Leaf) |
+| Sat 11 AM | Biryani Masala | Pune Godown | -15 | 41 | Delivery Note (Walk-in) |
+
+**When to use it:** When something doesn't add up. "I had 50 jars on Monday morning, now I have 41. Where did they go?" The ledger shows every movement. This is how she catches the mystery she had at Month 0 — "notebook says 24 jars, shelf has 19, where did 5 go?" Now she has an audit trail.
+
+#### Stock Projected Qty — "What will I actually have after pending orders?"
+
+**Where:** Stock > Stock Projected Qty
+
+| Item | Warehouse | Actual Qty | Reserved (SOs) | Ordered (POs) | Projected |
+|------|-----------|------------|----------------|---------------|-----------|
+| Biryani Masala 100g | Pune Godown | 56 | 24 | 0 | 32 |
+| Jeera | Pune Godown | 3 kg | 0 | 10 kg | 13 kg |
+
+**Actual Qty (56):** Jars physically on the shelf right now.
+**Reserved (24):** Green Leaf's Sales Order hasn't been delivered yet.
+**Ordered (10 kg):** PO to Ramesh, hasn't arrived yet.
+**Projected (32):** What she'll actually have after everything plays out.
+
+**When to use it:** Before accepting new orders. If a new store calls wanting 40 jars of Biryani Masala, she looks at Projected (32) and says: "I can do 30 by Friday, the rest by next Monday after I make a new batch." Without this report, she'd see Actual (56) and say yes, forgetting 24 are already promised to Green Leaf.
+
+#### Item-wise Stock Movement — "Tell me everything about one product"
+
+**Where:** Stock > Item-wise Stock Movement
+
+She filters for Biryani Masala 100g, January 2025:
+
+- **Opening:** 40 jars
+- **In:** 150 jars (3 manufacturing batches of 50)
+- **Out:** 165 jars (sales across all channels)
+- **Closing:** 25 jars
+
+**When to use it:** Monthly review. "Am I making enough Biryani Masala? Am I making too much Garam Masala?" Also useful for the Pickle Masala problem — she'd see In: 40, Out: 6, Closing: 34. Clear signal to stop making Pickle Masala.
+
+#### Stock Ageing — "What's been sitting too long?"
+
+**Where:** Stock > Stock Ageing
+
+| Item | Warehouse | Qty | Age (Days) |
+|------|-----------|-----|------------|
+| Pickle Masala 100g | Pune Godown | 34 | 87 days |
+| BBQ Rub 100g | Pune Godown | 22 | 63 days |
+| Biryani Masala 100g | Amazon FBA Mumbai | 170 | 72 days |
+| Tandoori Rub 100g | Pune Godown | 8 | 12 days |
+
+**Why this is critical for Nadia:**
+
+- **Pickle Masala at 87 days:** She made 40 as an experiment, sold 6. Spices lose potency over time — these are degrading on the shelf. She needs a clearance sale, a bundle deal, or a write-off. Every day they sit, they're worth less.
+- **Amazon FBA at 72 days:** Amazon charges long-term storage fees after 180 days, and monthly fees add up well before that. She needs to run Amazon ads, lower the price, or request removal before the fees eat her margins. This is her Month 12 lesson all over again.
+- **BBQ Rub at 63 days:** Probably seasonal — sells in winter BBQ season, not now. Plan a promo or pause production until October.
+- **Tandoori Rub at 12 days:** Fine. Moving normally.
+
+**When to use it:** Monthly. Sort by age descending and ask: "What's been sitting longest? Why? What do I do about it?" This is how she avoids repeating the saffron bulk-buy mistake — bought 50 kg because the price was amazing, half sat for 8 months, price dropped, had to write it down at a loss.
+
+---
+
+### What Nadia's setup replaces
+
+Before ERPNext, Nadia's technology stack looked like this:
+
+| Tool | What it did | Cost |
+|------|------------|------|
+| Zoho Inventory | Stock tracking | ₹3,000/month |
+| Unicommerce | Multi-channel sync | Additional cost |
+| Google Sheets | Recipes, production tracking | Free |
+| WhatsApp | Customer orders | Free |
+| Amazon Seller Central | Online sales data | Amazon fees |
+| Vyapar or Tally Prime | Billing, accounting, GST | ₹18,000/year (Tally Silver) |
+
+**Sunday routine:** 3-4 hours reconciling all these systems. They never agreed.
+
+After ERPNext, she has **one system**. Purchase Order → Purchase Receipt → Stock Entry (Manufacture) → Sales Order → Delivery Note → Sales Invoice → Payment Entry. Every step linked. Every rupee traceable. Every jar accounted for. GST returns, accounting, and inventory — all the same database. Her CA logs in and pulls whatever they need. No Tally. No reconciliation.
+
+Nadia gets her Sundays back.
+
+## B. Google Sheets Inventory Template
 
 If you're just starting out (like Nadia in Month 0-6), a spreadsheet is perfectly fine. Here's a template you can copy:
 
