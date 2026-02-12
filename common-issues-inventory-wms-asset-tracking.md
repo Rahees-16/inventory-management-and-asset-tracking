@@ -498,7 +498,7 @@ The "cheap" printer costs nearly double over its lifetime.
 
 **The progression most businesses follow:**
 ```
-Notebook → Excel → Google Sheets (shared) → Entry-level software (Vyapar, Tally) → Full ERP
+Notebook → Excel → Google Sheets (shared) → Entry-level software (Vyapar, Zoho) → Full ERP (ERPNext, Odoo)
 ```
 
 **When to upgrade from Excel:**
@@ -574,10 +574,10 @@ System inaccuracy → People don't trust it → People bypass it → System beco
 **The problem:** Inventory system, accounting software, WMS, e-commerce platform, and asset register don't talk to each other. Data lives in silos. Nobody has the full picture.
 
 **What it looks like in practice:**
-- Inventory count in Tally doesn't match the count in the warehouse app
+- Inventory count in the accounting software doesn't match the count in the warehouse app
 - A sale on Shopify doesn't automatically reduce stock in your ERP
 - Accounting shows ₹5 lakh in inventory value; the warehouse manager says it's ₹4.2 lakh
-- Asset register in Excel, maintenance log in another Excel, depreciation in Tally — three sources of truth for one asset
+- Asset register in Excel, maintenance log in another Excel, depreciation in the accounting system — three sources of truth for one asset
 
 **Real business impact:**
 - End-of-month reconciliation takes days instead of minutes
@@ -588,8 +588,8 @@ System inaccuracy → People don't trust it → People bypass it → System beco
 **The ideal state:** A sale happens → inventory count updates → reorder triggered if needed → accounting entry created → all automatically, in real time.
 
 **Indian software landscape for integration:**
-- **Tally + Vyapar + marketplace APIs:** Possible but requires manual sync or paid middleware
-- **ERPNext / Odoo:** All-in-one (inventory + accounting + WMS + e-commerce), but setup effort is higher
+- **Separate tools (Vyapar + Zoho + marketplace APIs):** Possible but requires manual sync or paid middleware
+- **ERPNext / Odoo:** All-in-one (inventory + accounting + WMS + e-commerce) — more setup effort upfront, but eliminates reconciliation entirely
 - **Unicommerce / Browntape / EasyEcom:** Multi-channel order management + inventory sync for Indian e-commerce
 
 > **Nadia's world:** Nadia uses Vyapar for billing, a Google Sheet for recipes and raw material tracking, WhatsApp to take orders, and Amazon Seller Central for online sales. A sale on Amazon doesn't update Vyapar. A raw material purchase logged in the Sheet doesn't appear in Vyapar. She spends Sunday nights manually reconciling four systems. The day she moves to ERPNext (free, open-source), all of this becomes one system — and she gets her Sundays back.
